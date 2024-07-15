@@ -2,14 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -60,7 +64,14 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  hardware = {
+    pulseaudio.enable = false;
+    nvidia.prime = {
+      enable = true;
+      nvidiaBusId = "PCI:1:00:0";
+      amdgpuBusId = "PCI:5:00:0";
+    };
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -82,120 +93,31 @@
   users.users.edmundo = {
     isNormalUser = true;
     description = "Edmundo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages =
       let
-        older = import
-          (builtins.fetchTarball {
-            url = "https://github.com/NixOS/nixpkgs/archive/a751bdc56b9741f4fb5e43c7dbb0a28e1e7ebf7c.tar.gz";
-          })
-          { };
+        older = import (builtins.fetchTarball {
+          url = "https://github.com/NixOS/nixpkgs/archive/a751bdc56b9741f4fb5e43c7dbb0a28e1e7ebf7c.tar.gz";
+        }) { };
       in
       [
         older.chromium
+        pkgs.dconf2nix
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.bing-wallpaper-changer
         pkgs.gnomeExtensions.clipboard-indicator
         pkgs.gnomeExtensions.resource-monitor
         pkgs.google-chrome
+        pkgs.nixfmt-rfc-style
         pkgs.nodejs_22
         pkgs.telegram-desktop
         pkgs.vscode
         pkgs.yarn
       ];
   };
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverrides = ''
-      [com/github/Ory0n/Resource_Monitor]
-      cpufrequencystatus=true
-      diskspacestatus=false
-      diskstatsstatus=false
-      extensionposition='center'
-      netethstatus=false
-      netwlanstatus=false
-      ramunit='perc'
-      refreshtime=1
-
-      [org/gnome/desktop/input-sources]
-      sources=[('xkb', 'br')]
-
-      [org/gnome/desktop/interface]
-      clock-show-seconds=true
-      clock-show-weekday=true
-      enable-hot-corners=false
-
-      [org/gnome/desktop/peripherals/mouse]
-      left-handed=true
-
-      [org/gnome/desktop/peripherals/touchpad]
-      disable-while-typing=false
-      tap-to-click=true
-      two-finger-scrolling-enabled=true
-
-      [org/gnome/desktop/wm/keybindings]
-      close=['<Super>q']
-      maximize=@as []
-      minimize=['<Super>Down']
-      switch-applications=['<Super>Tab']
-      switch-applications-backward=['<Shift><Super>Tab']
-      switch-windows=['<Alt>Tab']
-      switch-windows-backward=['<Shift><Alt>Tab']
-      toggle-maximized=['<Super>Up']
-      unmaximize=@as []
-
-      [org/gnome/desktop/wm/preferences]
-      resize-with-right-button=true
-
-      [org/gnome/mutter]
-      dynamic-workspaces=true
-
-      [org/gnome/settings-daemon/plugins/media-keys]
-      mic-mute=['<Control><Super>Delete']
-      next=['<Control><Super>Page_Down']
-      previous=['<Control><Super>Page_Up']
-      screen-brightness-down=['<Control><Super>Left']
-      screen-brightness-up=['<Control><Super>Right']
-      volume-down=['<Control><Super>Down']
-      volume-up=['<Control><Super>Up']
-
-      [org/gnome/settings-daemon/plugins/power]
-      idle-dim=false
-      power-button-action='nothing'
-      power-saver-profile-on-low-battery=false
-      sleep-inactive-ac-type='nothing'
-      sleep-inactive-battery-type='nothing'
-
-      [org/gnome/shell]
-      enabled-extensions=['BingWallpaper@ineffable-gmail.com', 'clipboard-indicator@tudmotu.com', 'Resource_Monitor@Ory0n']
-
-      [org/gnome/shell/app-switcher]
-      current-workspace-only=true
-
-      [org/gnome/shell/extensions/bingwallpaper]
-      download-folder='~/Pictures/BingWallpaper/'
-      hide=true
-      icon-name='bing-symbolic'
-      revert-to-current-image=true
-
-      [org/gnome/shell/extensions/clipboard-indicator]
-      clear-history=@as []
-      history-size=50
-      move-item-first=true
-      next-entry=@as []
-      prev-entry=@as []
-      private-mode-binding=@as []
-      toggle-menu=['<Control><Super>v']
-
-      [system/locale]
-      region='en_CA.UTF-8'
-    '';
-
-    extraGSettingsOverridePackages = [
-      pkgs.gsettings-desktop-schemas # for org.gnome.desktop
-      pkgs.gnome.gnome-shell # for org.gnome.shell
-    ];
-  };
-
 
   # Install firefox.
   programs = {
@@ -208,96 +130,11 @@
         init.defaultBranch = "main";
       };
     };
-    dconf = {
-      # dconf reset -f /
-      enable = true;
-      profiles.user.databases = [{
-        settings = with lib.gvariant; {
-          "org/gnome/desktop/input-sources".sources = [
-            (mkTuple [ "xkb" "br" ])
-          ];
-          "org/gnome/desktop/interface" = {
-            clock-show-seconds = true;
-            clock-show-weekday = true;
-            enable-hot-corners = false;
-          };
-          "org/gnome/desktop/peripherals/mouse".left-handed = true;
-          "org/gnome/desktop/peripherals/touchpad" = {
-            disable-while-typing = false;
-            tap-to-click = true;
-            two-finger-scrolling-enabled = true;
-          };
-          "org/gnome/desktop/wm/keybindings" = {
-            close = [ "<Super>q" ];
-            maximize = mkEmptyArray type.string;
-            minimize = [ "<Super>Down" ];
-            switch-applications = [ "<Super>Tab" ];
-            switch-applications-backward = [ "<Shift><Super>Tab" ];
-            switch-windows = [ "<Alt>Tab" ];
-            switch-windows-backward = [ "<Shift><Alt>Tab" ];
-            toggle-maximized = [ "<Super>Up" ];
-            unmaximize = mkEmptyArray type.string;
-          };
-          "org/gnome/desktop/wm/preferences".resize-with-right-button = true;
-          "org/gnome/mutter".dynamic-workspaces = true;
-          "org/gnome/settings-daemon/plugins/media-keys" = {
-            mic-mute = [ "<Control><Super>Delete" ];
-            next = [ "<Control><Super>Page_Down" ];
-            previous = [ "<Control><Super>Page_Up" ];
-            screen-brightness-down = [ "<Control><Super>Left" ];
-            screen-brightness-up = [ "<Control><Super>Right" ];
-            volume-down = [ "<Control><Super>Down" ];
-            volume-up = [ "<Control><Super>Up" ];
-          };
-          "org/gnome/settings-daemon/plugins/power" = {
-            idle-dim = false;
-            power-button-action = "nothing";
-            power-saver-profile-on-low-battery = false;
-            sleep-inactive-ac-type = "nothing";
-            sleep-inactive-battery-type = "nothing";
-          };
-          "org/gnome/shell".enabled-extensions = [
-            "BingWallpaper@ineffable-gmail.com"
-            "clipboard-indicator@tudmotu.com"
-            "Resource_Monitor@Ory0n"
-          ];
-          "org/gnome/shell/app-switcher".current-workspace-only = true;
-          "org/gnome/shell/extensions/clipboard-indicator" = {
-            clear-history = mkEmptyArray type.string;
-            history-size = mkInt32 50;
-            move-item-first = true;
-            next-entry = mkEmptyArray type.string;
-            prev-entry = mkEmptyArray type.string;
-            private-mode-binding = mkEmptyArray type.string;
-            toggle-menu = [ "<Control><Super>v" ];
-          };
-          "com/github/Ory0n/Resource_Monitor" = {
-            cpufrequencystatus = true;
-            diskspacestatus = false;
-            diskstatsstatus = false;
-            extensionposition = "center";
-            netethstatus = false;
-            netwlanstatus = false;
-            ramunit = "perc";
-            refreshtime = mkInt32 1;
-          };
-          "org/gnome/shell/extensions/bingwallpaper" = {
-            download-folder = "~/Pictures/BingWallpaper/";
-            hide = true;
-            icon-name = "bing-symbolic";
-            revert-to-current-image = true;
-          };
-          "system/locale".region = "en_CA.UTF-8";
-        };
-      }];
-    };
   };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -331,5 +168,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

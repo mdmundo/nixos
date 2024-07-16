@@ -63,15 +63,31 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Nvidia settings.
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
-    pulseaudio.enable = false;
-    nvidia.prime = {
-      enable = true;
-      nvidiaBusId = "PCI:1:00:0";
-      amdgpuBusId = "PCI:5:00:0";
+    opengl.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        nvidiaBusId = "PCI:1:00:0";
+        amdgpuBusId = "PCI:5:00:0";
+      };
     };
   };
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -105,14 +121,14 @@
       in
       [
         older.chromium
-        pkgs.dconf2nix
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.bing-wallpaper-changer
         pkgs.gnomeExtensions.clipboard-indicator
         pkgs.gnomeExtensions.resource-monitor
         pkgs.google-chrome
-        pkgs.nixfmt-rfc-style
         pkgs.nodejs_22
+        pkgs.obs-studio
+        pkgs.sublime-merge
         pkgs.telegram-desktop
         pkgs.vscode
         pkgs.yarn
@@ -122,6 +138,8 @@
   # Install firefox.
   programs = {
     fish.enable = true;
+    hyprland.enable = true;
+    nix-ld.enable = true;
     git = {
       enable = true;
       config = {
@@ -129,6 +147,111 @@
         user.email = "manyymoore@gmail.com";
         init.defaultBranch = "main";
       };
+    };
+    dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings = with lib.gvariant; {
+            "com/github/Ory0n/Resource_Monitor" = {
+              cpufrequencystatus = true;
+              diskspacestatus = false;
+              diskstatsstatus = false;
+              extensionposition = "center";
+              netethstatus = false;
+              netwlanstatus = false;
+              ramunit = "perc";
+              refreshtime = mkInt32 1;
+            };
+            "org/gnome/desktop/input-sources" = {
+              sources = [
+                (mkTuple [
+                  "xkb"
+                  "br"
+                ])
+              ];
+            };
+            "org/gnome/desktop/interface" = {
+              clock-show-seconds = true;
+              clock-show-weekday = true;
+              enable-hot-corners = false;
+              toolkit-accessibility = false;
+            };
+            "org/gnome/desktop/peripherals/keyboard" = {
+              numlock-state = true;
+            };
+            "org/gnome/desktop/peripherals/mouse" = {
+              left-handed = true;
+            };
+            "org/gnome/desktop/peripherals/touchpad" = {
+              disable-while-typing = false;
+              tap-to-click = true;
+              two-finger-scrolling-enabled = true;
+            };
+            "org/gnome/desktop/wm/keybindings" = {
+              close = [ "<Super>q" ];
+              maximize = mkEmptyArray type.string;
+              minimize = [ "<Super>Down" ];
+              switch-applications = [ "<Super>Tab" ];
+              switch-applications-backward = [ "<Shift><Super>Tab" ];
+              switch-windows = [ "<Alt>Tab" ];
+              switch-windows-backward = [ "<Shift><Alt>Tab" ];
+              toggle-maximized = [ "<Super>Up" ];
+              unmaximize = mkEmptyArray type.string;
+            };
+            "org/gnome/desktop/wm/preferences" = {
+              resize-with-right-button = true;
+            };
+            "org/gnome/mutter" = {
+              dynamic-workspaces = true;
+            };
+            "org/gnome/settings-daemon/plugins/media-keys" = {
+              mic-mute = [ "<Control><Super>Delete" ];
+              next = [ "<Control><Super>Page_Down" ];
+              previous = [ "<Control><Super>Page_Up" ];
+              screen-brightness-down = [ "<Control><Super>Left" ];
+              screen-brightness-up = [ "<Control><Super>Right" ];
+              volume-down = [ "<Control><Super>Down" ];
+              volume-up = [ "<Control><Super>Up" ];
+            };
+            "org/gnome/settings-daemon/plugins/power" = {
+              idle-dim = false;
+              power-button-action = "nothing";
+              power-saver-profile-on-low-battery = false;
+              sleep-inactive-ac-type = "nothing";
+              sleep-inactive-battery-type = "nothing";
+            };
+            "org/gnome/shell" = {
+              enabled-extensions = [
+                "BingWallpaper@ineffable-gmail.com"
+                "clipboard-indicator@tudmotu.com"
+                "Resource_Monitor@Ory0n"
+              ];
+            };
+            "org/gnome/shell/app-switcher" = {
+              current-workspace-only = true;
+            };
+            "org/gnome/shell/extensions/bingwallpaper" = {
+              download-folder = "~/Pictures/BingWallpaper/";
+              hide = true;
+              icon-name = "bing-symbolic";
+              revert-to-current-image = true;
+            };
+            "org/gnome/shell/extensions/clipboard-indicator" = {
+              clear-history = mkEmptyArray type.string;
+              history-size = mkInt32 50;
+              move-item-first = true;
+              next-entry = mkEmptyArray type.string;
+              prev-entry = mkEmptyArray type.string;
+              private-mode-binding = mkEmptyArray type.string;
+              toggle-menu = [ "<Control><Super>v" ];
+            };
+            "system/locale" = {
+              region = "en_CA.UTF-8";
+            };
+          };
+        }
+      ];
     };
   };
 

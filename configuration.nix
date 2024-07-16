@@ -105,6 +105,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.edmundo = {
     isNormalUser = true;
@@ -122,6 +123,7 @@
       [
         older.chromium
         pkgs.gnome.dconf-editor
+        pkgs.gnomeExtensions.alphabetical-app-grid
         pkgs.gnomeExtensions.bing-wallpaper-changer
         pkgs.gnomeExtensions.clipboard-indicator
         pkgs.gnomeExtensions.resource-monitor
@@ -162,6 +164,9 @@
               netwlanstatus = false;
               ramunit = "perc";
               refreshtime = mkInt32 1;
+            };
+            "org/gnome/desktop/app-folders" = {
+              folder-children = mkEmptyArray type.string;
             };
             "org/gnome/desktop/input-sources" = {
               sources = [
@@ -226,6 +231,7 @@
                 "BingWallpaper@ineffable-gmail.com"
                 "clipboard-indicator@tudmotu.com"
                 "Resource_Monitor@Ory0n"
+                "AlphabeticalAppGrid@stuarthayhurst"
               ];
             };
             "org/gnome/shell/app-switcher" = {

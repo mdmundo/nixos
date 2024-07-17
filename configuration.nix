@@ -122,6 +122,7 @@
       in
       [
         a751.chromium
+        pkgs.docker-compose
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.alphabetical-app-grid
         pkgs.gnomeExtensions.bing-wallpaper-changer
@@ -137,11 +138,20 @@
       ];
   };
 
+  # podman
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   # Install firefox.
   programs = {
     fish.enable = true;
     hyprland.enable = true;
-    nix-ld.enable = true;
     git = {
       enable = true;
       config = {

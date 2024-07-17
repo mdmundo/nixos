@@ -122,7 +122,7 @@
       in
       [
         a751.chromium
-        pkgs.docker-compose
+        pkgs.distrobox
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.alphabetical-app-grid
         pkgs.gnomeExtensions.bing-wallpaper-changer
@@ -141,11 +141,7 @@
   # podman
   virtualisation = {
     containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
+    podman.enable = true;
   };
 
   # Install firefox.

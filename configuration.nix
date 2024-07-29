@@ -276,6 +276,23 @@
     #  wget
   ];
 
+  services = {
+    logind.lidSwitch = "ignore";
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger = {
+          governor = "performance";
+          turbo = "never";
+        };
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+      };
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

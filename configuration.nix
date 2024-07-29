@@ -129,12 +129,10 @@
         pkgs.gnomeExtensions.clipboard-indicator
         pkgs.gnomeExtensions.resource-monitor
         pkgs.google-chrome
-        pkgs.nodejs_22
         pkgs.obs-studio
         pkgs.sublime-merge
         pkgs.telegram-desktop
         pkgs.vscode
-        pkgs.yarn
       ];
   };
 

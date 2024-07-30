@@ -172,10 +172,7 @@
     auto-cpufreq = {
       enable = true;
       settings = {
-        charger = {
-          governor = "performance";
-          turbo = "never";
-        };
+        charger.turbo = "never";
         battery = {
           governor = "powersave";
           turbo = "never";

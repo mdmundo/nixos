@@ -276,6 +276,7 @@
 
   services = {
     logind.lidSwitch = "ignore";
+    power-profiles-daemon.enable = false;
     auto-cpufreq = {
       enable = true;
       settings = {

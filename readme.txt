@@ -4,3 +4,5 @@ cat dconf.ini | dconf load /
 
 update chromium path in `chrome-ehpmldbabbmdolhcpiaojaeopfmfdkaj-Default.desktop`
 get it with `which chromium`
+
+distrobox create -i ubuntu:latest --home ~/Documents/ubuntu-latest --hostname ubuntu

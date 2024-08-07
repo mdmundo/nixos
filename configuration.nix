@@ -122,6 +122,7 @@
       in
       [
         a751.chromium
+        pkgs.corepack_22
         pkgs.distrobox
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.alphabetical-app-grid
@@ -129,12 +130,10 @@
         pkgs.gnomeExtensions.clipboard-indicator
         pkgs.gnomeExtensions.resource-monitor
         pkgs.google-chrome
-        pkgs.nodejs_20
         pkgs.obs-studio
         pkgs.sublime-merge
         pkgs.telegram-desktop
         pkgs.vscode
-        pkgs.yarn
       ];
   };
 

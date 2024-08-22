@@ -105,7 +105,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -116,28 +119,21 @@
       "networkmanager"
       "wheel"
     ];
-    packages =
-      let
-        a751 = import (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/a751bdc56b9741f4fb5e43c7dbb0a28e1e7ebf7c.tar.gz";
-        }) { };
-      in
-      [
-        a751.chromium
-        pkgs.corepack_20
-        pkgs.distrobox
-        pkgs.gnome.dconf-editor
-        pkgs.gnomeExtensions.alphabetical-app-grid
-        pkgs.gnomeExtensions.bing-wallpaper-changer
-        pkgs.gnomeExtensions.clipboard-indicator
-        pkgs.gnomeExtensions.resource-monitor
-        pkgs.google-chrome
-        pkgs.nodejs_20
-        pkgs.obs-studio
-        pkgs.sublime-merge
-        pkgs.telegram-desktop
-        pkgs.vscode
-      ];
+    packages = [
+      pkgs.corepack_20
+      pkgs.distrobox
+      pkgs.gnome.dconf-editor
+      pkgs.gnomeExtensions.alphabetical-app-grid
+      pkgs.gnomeExtensions.bing-wallpaper-changer
+      pkgs.gnomeExtensions.clipboard-indicator
+      pkgs.gnomeExtensions.resource-monitor
+      pkgs.google-chrome
+      pkgs.nodejs_20
+      pkgs.obs-studio
+      pkgs.sublime-merge
+      pkgs.telegram-desktop
+      pkgs.vscode
+    ];
   };
 
   # podman

@@ -1,3 +1,5 @@
 cat dconf.ini | dconf load /
 
-git ls-remote https://github.com/NixOS/nixpkgs nixos-unstable
+### updates: get revision (use last commid sha)
+
+https://github.com/NixOS/nixpkgs/commits/nixos-unstable/

@@ -119,21 +119,27 @@
       "networkmanager"
       "wheel"
     ];
-    packages = [
-      pkgs.corepack_20
-      pkgs.distrobox
-      pkgs.gnome.dconf-editor
-      pkgs.gnomeExtensions.alphabetical-app-grid
-      pkgs.gnomeExtensions.bing-wallpaper-changer
-      pkgs.gnomeExtensions.clipboard-indicator
-      pkgs.gnomeExtensions.resource-monitor
-      pkgs.google-chrome
-      pkgs.nodejs_20
-      pkgs.obs-studio
-      pkgs.sublime-merge
-      pkgs.telegram-desktop
-      pkgs.vscode
-    ];
+    packages =
+      let
+        head = import (builtins.fetchTarball {
+          url = "https://github.com/NixOS/nixpkgs/archive/224042e9a3039291f22f4f2ded12af95a616cca0.tar.gz";
+        }) { config.allowUnfree = true; };
+      in
+      [
+        head.google-chrome
+        head.vscode
+        pkgs.corepack_20
+        pkgs.distrobox
+        pkgs.gnome.dconf-editor
+        pkgs.gnomeExtensions.alphabetical-app-grid
+        pkgs.gnomeExtensions.bing-wallpaper-changer
+        pkgs.gnomeExtensions.clipboard-indicator
+        pkgs.gnomeExtensions.resource-monitor
+        pkgs.nodejs_20
+        pkgs.obs-studio
+        pkgs.sublime-merge
+        pkgs.telegram-desktop
+      ];
   };
 
   # podman

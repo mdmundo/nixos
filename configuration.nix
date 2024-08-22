@@ -122,7 +122,7 @@
     packages =
       let
         head = import (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/224042e9a3039291f22f4f2ded12af95a616cca0.tar.gz";
+          url = "https://github.com/NixOS/nixpkgs/archive/c374d94f1536013ca8e92341b540eba4c22f9c62.tar.gz";
         }) { config.allowUnfree = true; };
       in
       [

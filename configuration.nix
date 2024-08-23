@@ -130,6 +130,7 @@
         head.vscode
         pkgs.corepack_20
         pkgs.distrobox
+        pkgs.firefox
         pkgs.gnome.dconf-editor
         pkgs.gnomeExtensions.alphabetical-app-grid
         pkgs.gnomeExtensions.bing-wallpaper-changer
@@ -151,7 +152,6 @@
   # Install firefox.
   programs = {
     dconf.enable = true;
-    firefox.enable = true;
     fish.enable = true;
     git = {
       enable = true;

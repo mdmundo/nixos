@@ -151,8 +151,8 @@
   # Install firefox.
   programs = {
     dconf.enable = true;
-    fish.enable = true;
     firefox.enable = true;
+    fish.enable = true;
     git = {
       enable = true;
       config = {

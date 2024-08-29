@@ -107,7 +107,7 @@
 
   users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mdmundo = {
+  users.users.edmundo = {
     isNormalUser = true;
     description = "Edmundo";
     extraGroups = [

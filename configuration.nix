@@ -123,6 +123,7 @@
       [
         head.google-chrome
         head.vscode
+        pkgs.chromium
         pkgs.corepack_20
         pkgs.distrobox
         pkgs.firefox

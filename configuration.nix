@@ -164,11 +164,8 @@
       pkgs.corepack_20
       pkgs.distrobox
       pkgs.firefox
+      pkgs.gnome-extensions-cli
       pkgs.gnome.dconf-editor
-      pkgs.gnomeExtensions.alphabetical-app-grid
-      pkgs.gnomeExtensions.bing-wallpaper-changer
-      pkgs.gnomeExtensions.clipboard-indicator
-      pkgs.gnomeExtensions.resource-monitor
       pkgs.nodejs_20
       pkgs.obs-studio
       pkgs.sublime-merge

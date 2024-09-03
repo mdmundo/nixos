@@ -107,36 +107,23 @@
 
   users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.edmundo = {
-    isNormalUser = true;
-    description = "Edmundo";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages =
-      let
-        head = import (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/d0e1602ddde669d5beb01aec49d71a51937ed7be.tar.gz";
-        }) { config.allowUnfree = true; };
-      in
-      [
-        head.google-chrome
-        head.vscode
-        pkgs.chromium
-        pkgs.corepack_20
-        pkgs.distrobox
-        pkgs.firefox
-        pkgs.gnome.dconf-editor
-        pkgs.gnomeExtensions.alphabetical-app-grid
-        pkgs.gnomeExtensions.bing-wallpaper-changer
-        pkgs.gnomeExtensions.clipboard-indicator
-        pkgs.gnomeExtensions.resource-monitor
-        pkgs.nodejs_20
-        pkgs.obs-studio
-        pkgs.sublime-merge
-        pkgs.telegram-desktop
+  users.users = {
+    edmundo = {
+      isNormalUser = true;
+      description = "Edmundo";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
       ];
+    };
+    paulino = {
+      isNormalUser = true;
+      description = "Paulino";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+    };
   };
 
   # podman
@@ -164,10 +151,29 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
+  environment.systemPackages =
+    let
+      head = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/d0e1602ddde669d5beb01aec49d71a51937ed7be.tar.gz";
+      }) { config.allowUnfree = true; };
+    in
+    [
+      head.google-chrome
+      head.vscode
+      pkgs.chromium
+      pkgs.corepack_20
+      pkgs.distrobox
+      pkgs.firefox
+      pkgs.gnome.dconf-editor
+      pkgs.gnomeExtensions.alphabetical-app-grid
+      pkgs.gnomeExtensions.bing-wallpaper-changer
+      pkgs.gnomeExtensions.clipboard-indicator
+      pkgs.gnomeExtensions.resource-monitor
+      pkgs.nodejs_20
+      pkgs.obs-studio
+      pkgs.sublime-merge
+      pkgs.telegram-desktop
+    ];
 
   services = {
     logind.lidSwitch = "ignore";

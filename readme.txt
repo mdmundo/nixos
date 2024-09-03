@@ -2,7 +2,7 @@
 
 cat dconf.ini | dconf load /
 
-### updates: get revision
+### chrome flags
 
-- https://github.com/NixOS/nixpkgs/commits/nixos-unstable/
-- git ls-remote https://github.com/NixOS/nixpkgs nixos-unstable
+- chrome://flags/#overlay-scrollbars
+- chrome://flags/#ozone-platform-hint

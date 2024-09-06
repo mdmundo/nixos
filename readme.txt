@@ -8,7 +8,7 @@ dconf reset -f /
 
 ## extensions
 
-gext install 4269 1262 779 1634 6385
+gext install 4269 779 6469 1634 6385
 
 ## chrome flags
 

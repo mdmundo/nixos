@@ -1,16 +1,16 @@
-### dconf
+# dconf
 
-#### load, dump, reset
+## load, dump, reset
 
-- cat dconf.ini | dconf load /
-- dconf dump / > dconf.ini
-- dconf reset -f /
+cat dconf.ini | dconf load /
+dconf dump / > dconf.ini
+dconf reset -f /
 
-#### extensions
+## extensions
 
-- gext install 4269 1262 779 1634 6385
+gext install 4269 1262 779 1634 6385
 
-### chrome flags
+## chrome flags
 
-- chrome://flags/#overlay-scrollbars
-- chrome://flags/#ozone-platform-hint
+chrome://flags/#overlay-scrollbars
+chrome://flags/#ozone-platform-hint

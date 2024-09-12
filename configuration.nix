@@ -154,7 +154,7 @@
   environment.systemPackages =
     let
       head = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/1032424e0ecd98243fa2f00585f84da798d3b166.tar.gz";
+        url = "https://github.com/NixOS/nixpkgs/archive/8a35d43459e5dce81404494d041ecc0c23d0cdc7.tar.gz";
       }) { config.allowUnfree = true; };
     in
     [

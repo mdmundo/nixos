@@ -160,6 +160,7 @@
     [
       head.google-chrome
       head.vscode
+      head.warp-terminal
       pkgs.chromium
       pkgs.corepack_20
       pkgs.distrobox

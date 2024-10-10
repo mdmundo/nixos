@@ -161,9 +161,11 @@
       head.google-chrome
       head.vscode
       head.warp-terminal
+      pkgs.calibre
       pkgs.chromium
       pkgs.corepack_20
       pkgs.distrobox
+      pkgs.epubcheck
       pkgs.firefox
       pkgs.gnome-extensions-cli
       pkgs.gnome.dconf-editor

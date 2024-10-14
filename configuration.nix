@@ -165,13 +165,13 @@
       pkgs.chromium
       pkgs.corepack_20
       pkgs.distrobox
-      pkgs.epubcheck
       pkgs.firefox
       pkgs.gnome-extensions-cli
       pkgs.gnome.dconf-editor
       pkgs.inkscape
       pkgs.nodejs_20
       pkgs.obs-studio
+      pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop
     ];

@@ -169,6 +169,7 @@
       pkgs.gnome-extensions-cli
       pkgs.gnome.dconf-editor
       pkgs.inkscape
+      pkgs.lutris
       pkgs.nodejs_20
       pkgs.obs-studio
       pkgs.slack

@@ -172,6 +172,7 @@
       pkgs.lutris
       pkgs.nodejs_20
       pkgs.obs-studio
+      pkgs.postman
       pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop

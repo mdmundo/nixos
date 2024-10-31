@@ -47,17 +47,9 @@
     LC_TIME = "en_CA.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    settings.Users.HideUsers = "edmundo";
-  };
-  services.desktopManager.plasma6.enable = true;
-  hardware.bluetooth.enable = true;
+  services.xserver.enable = true;
+  services.xserver.desktopManager.budgie.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "br";

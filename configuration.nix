@@ -51,7 +51,7 @@
   # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.sddm  = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     settings.Users.HideUsers = "edmundo";
@@ -139,7 +139,6 @@
 
   # Install firefox.
   programs = {
-    dconf.enable = true;
     fish.enable = true;
     git = {
       enable = true;
@@ -159,20 +158,17 @@
   environment.systemPackages =
     let
       head = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/8a35d43459e5dce81404494d041ecc0c23d0cdc7.tar.gz";
+        url = "https://github.com/NixOS/nixpkgs/archive/b5804964142a59431f1cec9040ea5b964a804941.tar.gz";
       }) { config.allowUnfree = true; };
     in
     [
       head.google-chrome
       head.vscode
-      head.warp-terminal
       pkgs.calibre
       pkgs.chromium
       pkgs.corepack_20
       pkgs.distrobox
       pkgs.firefox
-      pkgs.gnome-extensions-cli
-      pkgs.gnome.dconf-editor
       pkgs.inkscape
       pkgs.lutris
       pkgs.nodejs_20
@@ -184,7 +180,6 @@
     ];
 
   services = {
-    logind.lidSwitch = "ignore";
     power-profiles-daemon.enable = false;
     auto-cpufreq = {
       enable = true;

@@ -49,7 +49,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
+
   # Desktop Environment
   services.displayManager.sddm = {
     enable = true;
@@ -177,6 +177,7 @@
       pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop
+      pkgs.vlc
     ];
 
   services = {

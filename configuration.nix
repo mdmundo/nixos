@@ -171,6 +171,7 @@
       pkgs.firefox
       pkgs.inkscape
       pkgs.lutris
+      pkgs.nixfmt-rfc-style
       pkgs.nodejs_20
       pkgs.obs-studio
       pkgs.postman

@@ -54,7 +54,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    settings.Users.HideUsers = "edmundo";
   };
   services.desktopManager.plasma6.enable = true;
   hardware.bluetooth.enable = true;
@@ -113,14 +112,6 @@
   users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
-    edmundo = {
-      isNormalUser = true;
-      description = "edmundo";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-    };
     default = {
       isNormalUser = true;
       description = "default";

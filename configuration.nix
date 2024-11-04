@@ -148,13 +148,13 @@
   # $ nix search wget
   environment.systemPackages =
     let
-      head = import (builtins.fetchTarball {
+      pin = import (builtins.fetchTarball {
         url = "https://github.com/NixOS/nixpkgs/archive/b5804964142a59431f1cec9040ea5b964a804941.tar.gz";
       }) { config.allowUnfree = true; };
     in
     [
-      head.google-chrome
-      head.vscode
+      pin.google-chrome
+      pin.vscode
       pkgs.calibre
       pkgs.chromium
       pkgs.corepack_20
@@ -162,6 +162,7 @@
       pkgs.firefox
       pkgs.inkscape
       pkgs.lutris
+      pkgs.mpv
       pkgs.nixfmt-rfc-style
       pkgs.nodejs_20
       pkgs.obs-studio
@@ -169,24 +170,12 @@
       pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop
-      pkgs.vlc
     ];
 
-  services = {
-    power-profiles-daemon.enable = false;
-    auto-cpufreq = {
-      enable = true;
-      settings = {
-        charger = {
-          governor = "powersave";
-          turbo = "never";
-        };
-        battery = {
-          governor = "powersave";
-          turbo = "never";
-        };
-      };
-    };
+  powerManagement = {
+    enable = true;
+    cpufreq.max = 1700000;
+    cpuFreqGovernor = "powersave";
   };
 
   networking.firewall.allowedTCPPorts = [ 21 ];

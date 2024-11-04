@@ -178,7 +178,7 @@
       enable = true;
       settings = {
         charger = {
-          governor = "schedutil";
+          governor = "powersave";
           turbo = "never";
         };
         battery = {

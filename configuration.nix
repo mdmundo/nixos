@@ -161,6 +161,7 @@
       pkgs.distrobox
       pkgs.firefox
       pkgs.inkscape
+      pkgs.kdePackages.isoimagewriter
       pkgs.lutris
       pkgs.mpv
       pkgs.nixfmt-rfc-style
@@ -173,7 +174,12 @@
       pkgs.ventoy
     ];
 
- 
+  powerManagement = {
+    enable = true;
+    cpufreq.max = 1700000;
+    cpuFreqGovernor = "performance";
+  };
+
   networking.firewall.allowedTCPPorts = [ 21 ];
   services.vsftpd = {
     enable = true;

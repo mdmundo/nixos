@@ -168,6 +168,7 @@
       pkgs.nodejs_20
       pkgs.obs-studio
       pkgs.postman
+      pkgs.qbittorrent
       pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop

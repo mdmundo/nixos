@@ -170,14 +170,10 @@
       pkgs.slack
       pkgs.sublime-merge
       pkgs.telegram-desktop
+      pkgs.ventoy
     ];
 
-  powerManagement = {
-    enable = true;
-    cpufreq.max = 1700000;
-    cpuFreqGovernor = "powersave";
-  };
-
+ 
   networking.firewall.allowedTCPPorts = [ 21 ];
   services.vsftpd = {
     enable = true;

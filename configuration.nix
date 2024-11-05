@@ -175,10 +175,15 @@
       pkgs.ventoy
     ];
 
-  powerManagement = {
-    enable = true;
-    cpufreq.max = 1700000;
-    cpuFreqGovernor = "performance";
+  services = {
+    power-profiles-daemon.enable = false;
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger.turbo = "never";
+        battery.turbo = "never";
+      };
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 21 ];

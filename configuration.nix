@@ -51,12 +51,16 @@
   services.xserver.enable = true;
 
   # Desktop Environment
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    autoNumlock = true;
+  services = {
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      autoNumlock = true;
+    };
+    desktopManager.plasma6.enable = true;
   };
-  services.desktopManager.plasma6.enable = true;
+
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
 
   # Configure keymap in X11
@@ -113,9 +117,9 @@
   users.defaultUserShell = pkgs.fish;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
-    default = {
+    edmundo = {
       isNormalUser = true;
-      description = "default";
+      description = "Edmundo";
       extraGroups = [
         "networkmanager"
         "wheel"

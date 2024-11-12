@@ -2,12 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -19,6 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device = "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -48,9 +44,10 @@
   };
 
   # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Desktop Environment
+  # Enable the KDE Plasma Desktop Environment.
   services = {
     displayManager.sddm = {
       enable = true;
@@ -60,19 +57,109 @@
     desktopManager.plasma6.enable = true;
   };
 
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-
   # Configure keymap in X11
-  services.xserver.xkb.layout = "br";
+  services.xserver.xkb = {
+    layout = "br";
+    variant = "nodeadkeys";
+  };
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
 
-  # Nvidia settings.
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.edmundo = {
+    isNormalUser = true;
+    description = "Edmundo";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+      kdePackages.kate
+      #  thunderbird
+    ];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = [
+    pkgs.google-chrome
+    pkgs.vscode
+    pkgs.calibre
+    pkgs.chromium
+    pkgs.corepack_20
+    pkgs.distrobox
+    pkgs.firefox
+    pkgs.gparted
+    pkgs.hwinfo
+    pkgs.inkscape
+    pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kdenlive
+    pkgs.lutris
+    pkgs.mpv
+    pkgs.nixfmt-rfc-style
+    pkgs.nodejs_20
+    pkgs.obs-studio
+    pkgs.postman
+    pkgs.slack
+    pkgs.sublime-merge
+    pkgs.telegram-desktop
+    pkgs.ventoy
+  ];
+
+  virtualisation = {
+    containers.enable = true;
+    podman.enable = true;
+  };
+
+  users.defaultUserShell = pkgs.fish;
+
+  programs = {
+    fish.enable = true;
+    git = {
+      enable = true;
+      config = {
+        user.name = "Edmundo";
+        user.email = "manyymoore@gmail.com";
+        init.defaultBranch = "main";
+      };
+    };
+  };
+
+  services = {
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger.turbo = "never";
+        battery.turbo = "never";
+      };
+    };
+  };
+
+  hardware.bluetooth.enable = true;
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     opengl.enable = true;
@@ -92,111 +179,6 @@
         amdgpuBusId = "PCI:5:00:0";
       };
     };
-  };
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  users.defaultUserShell = pkgs.fish;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users = {
-    edmundo = {
-      isNormalUser = true;
-      description = "Edmundo";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-    };
-  };
-
-  # podman
-  virtualisation = {
-    containers.enable = true;
-    podman.enable = true;
-  };
-
-  # Install firefox.
-  programs = {
-    fish.enable = true;
-    git = {
-      enable = true;
-      config = {
-        user.name = "Edmundo Paulino";
-        user.email = "manyymoore@gmail.com";
-        init.defaultBranch = "main";
-      };
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages =
-    let
-      pin = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/b5804964142a59431f1cec9040ea5b964a804941.tar.gz";
-      }) { config.allowUnfree = true; };
-    in
-    [
-      pin.google-chrome
-      pin.vscode
-      pkgs.calibre
-      pkgs.chromium
-      pkgs.corepack_20
-      pkgs.distrobox
-      pkgs.firefox
-      pkgs.inkscape
-      pkgs.kdePackages.isoimagewriter
-      pkgs.kdePackages.kdenlive
-      pkgs.lutris
-      pkgs.mpv
-      pkgs.nixfmt-rfc-style
-      pkgs.nodejs_20
-      pkgs.obs-studio
-      pkgs.postman
-      pkgs.qbittorrent
-      pkgs.slack
-      pkgs.sublime-merge
-      pkgs.telegram-desktop
-      pkgs.ventoy
-    ];
-
-  services = {
-    power-profiles-daemon.enable = false;
-    auto-cpufreq = {
-      enable = true;
-      settings = {
-        charger.turbo = "never";
-        battery.turbo = "never";
-      };
-    };
-  };
-
-  networking.firewall.allowedTCPPorts = [ 21 ];
-  services.vsftpd = {
-    enable = true;
-    localUsers = true;
-    writeEnable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are

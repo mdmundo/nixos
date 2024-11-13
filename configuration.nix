@@ -31,18 +31,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_CA.UTF-8";
-    LC_IDENTIFICATION = "en_CA.UTF-8";
-    LC_MEASUREMENT = "en_CA.UTF-8";
-    LC_MONETARY = "en_CA.UTF-8";
-    LC_NAME = "en_CA.UTF-8";
-    LC_NUMERIC = "en_CA.UTF-8";
-    LC_PAPER = "en_CA.UTF-8";
-    LC_TELEPHONE = "en_CA.UTF-8";
-    LC_TIME = "en_CA.UTF-8";
-  };
-
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -58,10 +46,7 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "br";
-    variant = "nodeadkeys";
-  };
+  services.xserver.xkb.layout = "br";
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
@@ -92,10 +77,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-    ];
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
     ];
   };
 
@@ -187,6 +168,7 @@
     localUsers = true;
     writeEnable = true;
   };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

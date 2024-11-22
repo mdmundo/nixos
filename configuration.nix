@@ -86,13 +86,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.google-chrome
-    pkgs.vscode
+    pkgs.audacity
     pkgs.calibre
     pkgs.chromium
     pkgs.corepack_20
     pkgs.distrobox
     pkgs.firefox
+    pkgs.google-chrome
     pkgs.gparted
     pkgs.hwinfo
     pkgs.inkscape
@@ -108,6 +108,7 @@
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
+    pkgs.vscode
   ];
 
   virtualisation = {
@@ -116,16 +117,14 @@
   };
 
   users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
 
-  programs = {
-    fish.enable = true;
-    git = {
-      enable = true;
-      config = {
-        user.name = "Edmundo";
-        user.email = "manyymoore@gmail.com";
-        init.defaultBranch = "main";
-      };
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "Edmundo";
+      user.email = "manyymoore@gmail.com";
+      init.defaultBranch = "main";
     };
   };
 
@@ -174,6 +173,8 @@
     localUsers = true;
     writeEnable = true;
   };
+
+  services.earlyoom.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

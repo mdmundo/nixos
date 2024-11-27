@@ -98,6 +98,7 @@
     pkgs.inkscape
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kdenlive
+    pkgs.kdePackages.ktorrent
     pkgs.lutris
     pkgs.mpv
     pkgs.nixfmt-rfc-style

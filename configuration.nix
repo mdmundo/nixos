@@ -112,6 +112,11 @@
     pkgs.vscode
   ];
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   virtualisation = {
     containers.enable = true;
     podman.enable = true;

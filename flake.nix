@@ -14,12 +14,12 @@
         nitro = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
+            nitro/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.edmundo = import ./home.nix;
+              home-manager.users.edmundo = import nitro/home/edmundo.nix;
             }
           ];
         };

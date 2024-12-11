@@ -11,15 +11,15 @@
     { nixpkgs, home-manager, ... }@inputs:
     {
       nixosConfigurations = {
-        nitro = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            nitro/configuration.nix
+            nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.edmundo = import nitro/home.nix;
+              home-manager.users.edmundo = import nixos/home.nix;
             }
           ];
         };

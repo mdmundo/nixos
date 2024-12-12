@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  updates,
+  ...
+}:
 
 {
   imports = [
@@ -108,7 +113,7 @@
     pkgs.slack
     pkgs.sublime-merge
     pkgs.telegram-desktop
-    pkgs.ventoy
+    updates.ventoy
     pkgs.vscode
   ];
 

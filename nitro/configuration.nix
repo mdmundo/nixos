@@ -115,7 +115,6 @@
     pkgs.telegram-desktop
     pkgs.ventoy
     pkgs.vscode
-    pkgs.waydroid
   ];
 
   nix.settings.experimental-features = [
@@ -190,7 +189,7 @@
 
   programs.steam.enable = true;
 
-  programs.nix-ld.enable = true;
+  virtualisation.waydroid.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

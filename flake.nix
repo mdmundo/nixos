@@ -36,6 +36,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import nitro/home/edmundo.nix;
+                extraSpecialArgs = specialArgs;
               };
             }
           ];

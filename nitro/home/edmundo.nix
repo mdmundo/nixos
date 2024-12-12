@@ -12,7 +12,7 @@
   home.homeDirectory = "/home/edmundo";
 
   # Packages that should be installed to the user profile.
-  home.packages = [ pkgs.deno ];
+  home.packages = [ pkgs.hello ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -113,7 +113,7 @@
     pkgs.slack
     pkgs.sublime-merge
     pkgs.telegram-desktop
-    updates.ventoy
+    pkgs.ventoy
     pkgs.vscode
   ];
 

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/7109b680d161993918b0a126f38bc39763e5a709";
-    updates.url = "github:nixos/nixpkgs/cbe2b770fc8eeca5fb1440f6f4c5a13e63f743b9";
+    updates.url = "github:nixos/nixpkgs/a0f3e10d94359665dba45b71b4227b0aeb851f8e";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";

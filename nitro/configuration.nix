@@ -111,10 +111,12 @@
     pkgs.obs-studio
     pkgs.postman
     pkgs.slack
+    pkgs.steam
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
     pkgs.vscode
+    pkgs.waydroid
   ];
 
   nix.settings.experimental-features = [

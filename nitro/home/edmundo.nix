@@ -29,21 +29,18 @@
 
   programs.plasma = {
     enable = true;
-    shortcuts = {
-      "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left,Monitor Brightness Down";
-      "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right,Monitor Brightness Up";
-      "kmix"."decrease_volume" = "Meta+Down,Volume Down";
-      "kmix"."increase_volume" = "Meta+Up,Volume Up";
-      "kwin"."Window Close" = "Meta+Q,Alt+F4";
-      "mediacontrol"."previousmedia" = "Meta+J,Media Previous";
-      "mediacontrol"."playpausemedia" = "Meta+K,Media Play";
-      "mediacontrol"."nextmedia" = "Meta+L,Media Next";
+    input.keyboard.numlockOnStartup = "on";
+    kscreenlocker = {
+      appearance.wallpaperPictureOfTheDay.provider = "bing";
+      autoLock = false;
+    };
+    workspace = {
+      wallpaperPictureOfTheDay.provider = "bing";
+      wallpaperFillMode = "preserveAspectCrop";
     };
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
-      "kscreenlockerrc"."Daemon"."Autolock" = false;
-      "kscreenlockerrc"."Daemon"."LockGrace" = 0;
     };
   };
 }

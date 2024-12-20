@@ -90,6 +90,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "corectrl"
     ];
   };
 

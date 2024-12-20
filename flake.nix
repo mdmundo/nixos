@@ -34,18 +34,22 @@
             };
           };
           modules = [
-            ./configuration.nix
+            nitro/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.edmundo = import ./home.nix;
+                users.edmundo = import nitro/home.nix;
                 extraSpecialArgs = specialArgs;
                 sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               };
             }
           ];
+        };
+        mini = updates.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          modules = [ mini/configuration.nix ];
         };
       };
     };

@@ -34,13 +34,13 @@
             };
           };
           modules = [
-            nitro/configuration.nix
+            ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.edmundo = import nitro/home/edmundo.nix;
+                users.edmundo = import ./home.nix;
                 extraSpecialArgs = specialArgs;
                 sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               };

@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nitro"
-        ]
-      },
-      "locked": {
-        "lastModified": 1726989464,
-        "narHash": "sha256-Vl+WVTJwutXkimwGprnEtXc/s/s8sMuXzqXaspIGlwM=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "2f23fa308a7c067e52dfcc30a0758f47043ec176",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "release-24.05",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "mini": {
       "locked": {
         "lastModified": 1734600368,
@@ -97,10 +76,31 @@
         "type": "github"
       }
     },
-    "plasma-manager": {
+    "nitro-hm": {
+      "inputs": {
+        "nixpkgs": [
+          "nitro"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726989464,
+        "narHash": "sha256-Vl+WVTJwutXkimwGprnEtXc/s/s8sMuXzqXaspIGlwM=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "2f23fa308a7c067e52dfcc30a0758f47043ec176",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nitro-pm": {
       "inputs": {
         "home-manager": [
-          "home-manager"
+          "nitro-hm"
         ],
         "nixpkgs": [
           "nitro"
@@ -122,12 +122,12 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
         "mini": "mini",
         "mini-hm": "mini-hm",
         "mini-pm": "mini-pm",
         "nitro": "nitro",
-        "plasma-manager": "plasma-manager"
+        "nitro-hm": "nitro-hm",
+        "nitro-pm": "nitro-pm"
       }
     }
   },

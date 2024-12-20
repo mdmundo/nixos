@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/7109b680d161993918b0a126f38bc39763e5a709";
-    updates.url = "github:nixos/nixpkgs/nixos-24.11";
+    mini.url = "github:nixos/nixpkgs/b47fd6fa00c6afca88b8ee46cfdb00e104f50bca";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +18,7 @@
   outputs =
     inputs@{
       nixpkgs,
-      updates,
+      mini,
       home-manager,
       plasma-manager,
       ...
@@ -28,7 +28,7 @@
         nitro = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
-            updates = import updates {
+            mini = import mini {
               inherit system;
               config.allowUnfree = true;
             };
@@ -47,7 +47,7 @@
             }
           ];
         };
-        mini = updates.lib.nixosSystem rec {
+        mini = mini.lib.nixosSystem rec {
           system = "x86_64-linux";
           modules = [ mini/configuration.nix ];
         };

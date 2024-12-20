@@ -3,14 +3,14 @@
 
   inputs = {
     nitro.url = "github:nixos/nixpkgs/7109b680d161993918b0a126f38bc39763e5a709";
-    home-manager = {
+    nitro-hm = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nitro";
     };
-    plasma-manager = {
+    nitro-pm = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nitro";
-      inputs.home-manager.follows = "home-manager";
+      inputs.home-manager.follows = "nitro-hm";
     };
 
     mini.url = "github:nixos/nixpkgs/b47fd6fa00c6afca88b8ee46cfdb00e104f50bca";
@@ -28,8 +28,8 @@
   outputs =
     inputs@{
       nitro,
-      home-manager,
-      plasma-manager,
+      nitro-hm,
+      nitro-pm,
       mini,
       mini-hm,
       mini-pm,
@@ -47,14 +47,14 @@
           };
           modules = [
             nitro/configuration.nix
-            home-manager.nixosModules.home-manager
+            nitro-hm.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import nitro/home.nix;
                 extraSpecialArgs = specialArgs;
-                sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+                sharedModules = [ nitro-pm.homeManagerModules.plasma-manager ];
               };
             }
           ];

@@ -146,13 +146,6 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 21 ];
-  services.vsftpd = {
-    enable = true;
-    localUsers = true;
-    writeEnable = true;
-  };
-
   programs.corectrl.enable = true;
 
   hardware.bluetooth.enable = true;

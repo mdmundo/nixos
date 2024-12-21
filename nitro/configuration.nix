@@ -178,19 +178,6 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 21 ];
-  services.vsftpd = {
-    enable = true;
-    localUsers = true;
-    writeEnable = true;
-  };
-
-  services.earlyoom.enable = true;
-
-  programs.steam.enable = true;
-
-  virtualisation.waydroid.enable = true;
-
   programs.tuxclocker = {
     enable = true;
     enableAMD = true;

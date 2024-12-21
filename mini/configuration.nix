@@ -90,7 +90,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "corectrl"
     ];
   };
 
@@ -147,9 +146,12 @@
     };
   };
 
-  programs.corectrl.enable = true;
-
   hardware.bluetooth.enable = true;
+
+  programs.tuxclocker = {
+    enable = true;
+    enableAMD = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

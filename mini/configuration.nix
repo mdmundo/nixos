@@ -113,6 +113,7 @@
     pkgs.kdePackages.ktorrent
     pkgs.lutris
     pkgs.mpv
+    pkgs.neofetch
     pkgs.nixfmt-rfc-style
     pkgs.nodejs_20
     pkgs.obs-studio

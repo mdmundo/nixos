@@ -107,6 +107,7 @@
     pkgs.firefox
     pkgs.google-chrome
     pkgs.gparted
+    pkgs.hardinfo2
     pkgs.inkscape
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kdenlive

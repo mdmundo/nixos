@@ -37,6 +37,7 @@
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
+      "ksmserverrc"."General"."loginMode" = "emptySession";
       "plasmaparc"."General"."AudioFeedback" = false;
       "plasmaparc"."General"."VolumeStep" = 5;
       "spectaclerc"."General"."autoSaveImage" = true;

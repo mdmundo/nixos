@@ -37,6 +37,11 @@
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
+      "plasmaparc"."General"."AudioFeedback" = false;
+      "plasmaparc"."General"."VolumeStep" = 5;
+      "spectaclerc"."General"."autoSaveImage" = true;
+      "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
+      "spectaclerc"."General"."useReleaseToCapture" = true;
     };
   };
 }

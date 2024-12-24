@@ -100,6 +100,7 @@
   # $ nix search wget
   environment.systemPackages = [
     pkgs.audacity
+    pkgs.baobab
     pkgs.calibre
     pkgs.chromium
     pkgs.corepack_20

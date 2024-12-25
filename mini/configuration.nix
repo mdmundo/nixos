@@ -111,8 +111,10 @@
     pkgs.inkscape
     pkgs.kdePackages.filelight
     pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
+    pkgs.kile
     pkgs.lutris
     pkgs.mission-center
     pkgs.mpv

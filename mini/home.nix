@@ -58,7 +58,7 @@
     };
     workspace = {
       cursor = {
-        size = 50;
+        size = 24;
         theme = "Bibata-Modern-Ice";
       };
       wallpaperPictureOfTheDay.provider = "bing";

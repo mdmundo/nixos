@@ -100,6 +100,7 @@
   # $ nix search wget
   environment.systemPackages = [
     pkgs.audacity
+    pkgs.bibata-cursors
     pkgs.calibre
     pkgs.cascadia-code
     pkgs.chromium

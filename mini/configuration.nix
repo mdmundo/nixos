@@ -51,6 +51,15 @@
       enable = true;
       wayland.enable = true;
       autoNumlock = true;
+      settings = {
+        Theme = {
+          Font = "Cascadia Mono";
+          CursorTheme = "Bibata-Modern-Ice";
+        };
+        General = {
+          GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,QT_SCREEN_SCALE_FACTORS=1.25,QT_FONT_DPI=192";
+        };
+      };
     };
     desktopManager.plasma6.enable = true;
   };

@@ -110,11 +110,13 @@
     pkgs.google-chrome
     pkgs.gparted
     pkgs.hardinfo2
+    pkgs.helvum
     pkgs.inkscape
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
     pkgs.lutris
+    pkgs.mission-center
     pkgs.mpv
     pkgs.neofetch
     pkgs.nixfmt-rfc-style

@@ -100,7 +100,6 @@
   # $ nix search wget
   environment.systemPackages = [
     pkgs.audacity
-    pkgs.baobab
     pkgs.calibre
     pkgs.chromium
     pkgs.corepack_20
@@ -108,10 +107,9 @@
     pkgs.eartag
     pkgs.firefox
     pkgs.google-chrome
-    pkgs.gparted
-    pkgs.hardinfo2
     pkgs.helvum
     pkgs.inkscape
+    pkgs.kdePackages.filelight
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
@@ -123,7 +121,6 @@
     pkgs.nodejs_20
     pkgs.obs-studio
     pkgs.postman
-    pkgs.resources
     pkgs.stress
     pkgs.sublime-merge
     pkgs.telegram-desktop

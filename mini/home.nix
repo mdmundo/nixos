@@ -30,7 +30,37 @@
       appearance.wallpaperPictureOfTheDay.provider = "bing";
       autoLock = false;
     };
+    fonts = {
+      fixedWidth = {
+        family = "Cascadia Mono";
+        pointSize = 10;
+      };
+      general = {
+        family = "Cascadia Mono";
+        pointSize = 10;
+      };
+      menu = {
+        family = "Cascadia Mono";
+        pointSize = 10;
+      };
+      small = {
+        family = "Cascadia Mono";
+        pointSize = 8;
+      };
+      toolbar = {
+        family = "Cascadia Mono";
+        pointSize = 10;
+      };
+      windowTitle = {
+        family = "Cascadia Mono";
+        pointSize = 10;
+      };
+    };
     workspace = {
+      cursor = {
+        size = 50;
+        theme = "Bibata-Modern-Ice";
+      };
       wallpaperPictureOfTheDay.provider = "bing";
       wallpaperFillMode = "preserveAspectCrop";
     };

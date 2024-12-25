@@ -73,5 +73,15 @@
       "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
+    shortcuts = {
+      "kmix"."decrease_volume" = "Meta+Down";
+      "kmix"."increase_volume" = "Meta+Up";
+      "kwin"."Window Close" = "Meta+Q";
+      "mediacontrol"."nextmedia" = "Meta+L";
+      "mediacontrol"."playpausemedia" = "Meta+K";
+      "mediacontrol"."previousmedia" = "Meta+J";
+      "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
+      "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
+    };
   };
 }

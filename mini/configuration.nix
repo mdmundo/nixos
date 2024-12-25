@@ -121,6 +121,7 @@
     pkgs.nodejs_20
     pkgs.obs-studio
     pkgs.postman
+    pkgs.resources
     pkgs.stress
     pkgs.sublime-merge
     pkgs.telegram-desktop

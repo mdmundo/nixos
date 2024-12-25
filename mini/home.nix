@@ -74,12 +74,30 @@
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
     shortcuts = {
-      "kmix"."decrease_volume" = "Meta+Down";
-      "kmix"."increase_volume" = "Meta+Up";
-      "kwin"."Window Close" = "Meta+Q";
-      "mediacontrol"."nextmedia" = "Meta+L";
-      "mediacontrol"."playpausemedia" = "Meta+K";
-      "mediacontrol"."previousmedia" = "Meta+J";
+      "kmix"."decrease_volume" = [
+        "Meta+Down"
+        "Volume Down"
+      ];
+      "kmix"."increase_volume" = [
+        "Meta+Up"
+        "Volume Up"
+      ];
+      "kwin"."Window Close" = [
+        "Meta+Q"
+        "Alt+F4"
+      ];
+      "mediacontrol"."nextmedia" = [
+        "Meta+L"
+        "Media Next"
+      ];
+      "mediacontrol"."playpausemedia" = [
+        "Meta+K"
+        "Media Play"
+      ];
+      "mediacontrol"."previousmedia" = [
+        "Meta+J"
+        "Media Previous"
+      ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
     };

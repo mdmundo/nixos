@@ -101,6 +101,7 @@
   environment.systemPackages = [
     pkgs.audacity
     pkgs.calibre
+    pkgs.cascadia-code
     pkgs.chromium
     pkgs.corepack_20
     pkgs.distrobox

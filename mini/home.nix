@@ -30,6 +30,14 @@
       appearance.wallpaperPictureOfTheDay.provider = "bing";
       autoLock = false;
     };
+    workspace = {
+      cursor = {
+        size = 24;
+        theme = "Bibata-Modern-Ice";
+      };
+      wallpaperPictureOfTheDay.provider = "bing";
+      wallpaperFillMode = "preserveAspectCrop";
+    };
     fonts = {
       fixedWidth = {
         family = "Cascadia Mono";
@@ -56,14 +64,7 @@
         pointSize = 10;
       };
     };
-    workspace = {
-      cursor = {
-        size = 24;
-        theme = "Bibata-Modern-Ice";
-      };
-      wallpaperPictureOfTheDay.provider = "bing";
-      wallpaperFillMode = "preserveAspectCrop";
-    };
+
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
@@ -101,6 +102,7 @@
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
+      "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = "Meta+S";
     };
   };
 }

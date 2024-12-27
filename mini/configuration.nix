@@ -54,10 +54,11 @@
       settings = {
         Theme = {
           Font = "Cascadia Mono";
+          CursorSize = "48";
           CursorTheme = "Bibata-Modern-Ice";
         };
         General = {
-          GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell,QT_SCREEN_SCALE_FACTORS=1.25,QT_FONT_DPI=192";
+          GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=1.5";
         };
       };
     };

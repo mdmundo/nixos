@@ -76,6 +76,7 @@
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
     shortcuts = {
+      "ksmserver"."Lock Session" = [ "Pause" ];
       "kmix"."decrease_volume" = [
         "Meta+Down"
         "Volume Down"

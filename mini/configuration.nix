@@ -52,7 +52,6 @@
       wayland.enable = true;
       autoNumlock = true;
       settings = {
-
         Theme = {
           Font = "Cascadia Mono";
           CursorSize = "36";

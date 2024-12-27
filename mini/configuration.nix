@@ -52,13 +52,17 @@
       wayland.enable = true;
       autoNumlock = true;
       settings = {
+        Autologin = {
+          User = "edmundo";
+          Session = "plasma.desktop";
+        };
         Theme = {
           Font = "Cascadia Mono";
-          CursorSize = "48";
+          CursorSize = "36";
           CursorTheme = "Bibata-Modern-Ice";
         };
         General = {
-          GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=1.5";
+          GreeterEnvironment = "QT_SCALE_FACTOR=1.37";
         };
       };
     };

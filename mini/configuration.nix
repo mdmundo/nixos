@@ -52,10 +52,7 @@
       wayland.enable = true;
       autoNumlock = true;
       settings = {
-        Autologin = {
-          User = "edmundo";
-          Session = "plasma.desktop";
-        };
+
         Theme = {
           Font = "Cascadia Mono";
           CursorSize = "36";

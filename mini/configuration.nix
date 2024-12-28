@@ -119,6 +119,7 @@
     pkgs.eartag
     pkgs.firefox
     pkgs.google-chrome
+    pkgs.haruna
     pkgs.helvum
     pkgs.inkscape
     pkgs.kdePackages.filelight
@@ -129,7 +130,6 @@
     pkgs.kile
     pkgs.lutris
     pkgs.mission-center
-    pkgs.mpv
     pkgs.neofetch
     pkgs.nixfmt-rfc-style
     pkgs.nodejs_20

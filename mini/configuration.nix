@@ -129,6 +129,7 @@
     pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
+    pkgs.kdePackages.partitionmanager
     pkgs.kile
     pkgs.lutris
     pkgs.mission-center

@@ -124,6 +124,8 @@
     pkgs.inkscape
     pkgs.kdePackages.filelight
     pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kcalc
+    pkgs.kdePackages.kclock
     pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent

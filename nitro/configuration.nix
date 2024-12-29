@@ -19,7 +19,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device = "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
+  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device =
+    "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
   networking.hostName = "nitro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -146,7 +147,7 @@
     enable = true;
     config = {
       user.name = "Edmundo";
-      user.email = "manyymoore@gmail.com";
+      user.email = "60408300+mdmundo@users.noreply.github.com";
       init.defaultBranch = "main";
     };
   };

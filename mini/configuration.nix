@@ -111,7 +111,6 @@
   environment.systemPackages = [
     pkgs.audacity
     pkgs.bibata-cursors
-    pkgs.calibre
     pkgs.cascadia-code
     pkgs.chromium
     pkgs.corepack_20
@@ -121,7 +120,6 @@
     pkgs.google-chrome
     pkgs.haruna
     pkgs.helvum
-    pkgs.inkscape
     pkgs.kdePackages.filelight
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kcalc
@@ -130,7 +128,6 @@
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
     pkgs.kdePackages.partitionmanager
-    pkgs.kile
     pkgs.lutris
     pkgs.mission-center
     pkgs.neofetch
@@ -164,7 +161,7 @@
     enable = true;
     config = {
       user.name = "Edmundo";
-      user.email = "manyymoore@gmail.com";
+      user.email = "60408300+mdmundo@users.noreply.github.com";
       init.defaultBranch = "main";
     };
   };

@@ -69,6 +69,8 @@
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
       "ksmserverrc"."General"."loginMode" = "emptySession";
+      "kwinrc"."TabBox"."LayoutName" = "compact";
+      "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
       "kwinrc"."Xwayland"."Scale" = 1.25;
       "plasmaparc"."General"."AudioFeedback" = false;
       "spectaclerc"."General"."autoSaveImage" = true;

@@ -64,7 +64,6 @@
         pointSize = 10;
       };
     };
-
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;

@@ -36,6 +36,18 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_CA.UTF-8";
+    LC_IDENTIFICATION = "en_CA.UTF-8";
+    LC_MEASUREMENT = "en_CA.UTF-8";
+    LC_MONETARY = "en_CA.UTF-8";
+    LC_NAME = "en_CA.UTF-8";
+    LC_NUMERIC = "en_CA.UTF-8";
+    LC_PAPER = "en_CA.UTF-8";
+    LC_TELEPHONE = "en_CA.UTF-8";
+    LC_TIME = "en_CA.UTF-8";
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -139,22 +151,6 @@
     };
   };
 
-  services = {
-    auto-cpufreq = {
-      enable = true;
-      settings = {
-        charger = {
-          governor = "schedutil";
-          turbo = "never";
-        };
-        battery = {
-          governor = "powersave";
-          turbo = "never";
-        };
-      };
-    };
-  };
-
   hardware.bluetooth.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -184,6 +180,19 @@
   };
 
   services.openssh.enable = true;
+
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 0;
+        CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
+        RADEON_DPM_PERF_LEVEL_ON_AC = "low";
+        RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -178,6 +178,20 @@
 
   services.openssh.enable = true;
 
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_MAX_FREQ_ON_AC = 2800000;
+        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "power";
+        RADEON_DPM_PERF_LEVEL_ON_AC = "low";
+        # PCIE_ASPM_ON_AC = "powersave";
+      };
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

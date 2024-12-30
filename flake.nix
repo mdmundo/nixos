@@ -37,7 +37,8 @@
       ...
     }:
     let
-      pkgs = dev.legacyPackages.x86_64-linux;
+      system = "x86_64-linux";
+      pkgs = import dev { inherit system; };
     in
     {
       packages.x86_64-linux.default = pkgs.hello;
@@ -58,7 +59,7 @@
       };
       nixosConfigurations = {
         nitro = nitro.lib.nixosSystem rec {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             mini = import mini {
               inherit system;
@@ -80,7 +81,7 @@
           ];
         };
         mini = mini.lib.nixosSystem rec {
-          system = "x86_64-linux";
+          inherit system;
           modules = [
             mini/configuration.nix
             mini-hm.nixosModules.home-manager

@@ -6,6 +6,7 @@
   config,
   pkgs,
   updates,
+  fix,
   ...
 }:
 
@@ -103,39 +104,32 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages =
-    let
-      fix = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/3e4460083ead1e307481991862b72533855ecac2.tar.gz";
-        sha256 = "af2032e21dcc28664b21fb8c405b793d0d111d932e49c2691bf70ad3e929038a";
-      }) { config.allowUnfree = true; };
-    in
-    [
-      pkgs.audacity
-      pkgs.calibre
-      pkgs.chromium
-      pkgs.corepack_20
-      pkgs.distrobox
-      pkgs.firefox
-      pkgs.gparted
-      pkgs.hwinfo
-      pkgs.inkscape
-      pkgs.kdePackages.isoimagewriter
-      pkgs.kdePackages.kdenlive
-      pkgs.kdePackages.ktorrent
-      pkgs.lutris
-      pkgs.mpv
-      pkgs.nixfmt-rfc-style
-      pkgs.nodejs_20
-      pkgs.obs-studio
-      pkgs.postman
-      pkgs.slack
-      pkgs.sublime-merge
-      pkgs.telegram-desktop
-      pkgs.ventoy
-      updates.google-chrome
-      fix.vscode
-    ];
+  environment.systemPackages = [
+    pkgs.audacity
+    pkgs.calibre
+    pkgs.chromium
+    pkgs.corepack_20
+    pkgs.distrobox
+    pkgs.firefox
+    pkgs.gparted
+    pkgs.hwinfo
+    pkgs.inkscape
+    pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kdenlive
+    pkgs.kdePackages.ktorrent
+    pkgs.lutris
+    pkgs.mpv
+    pkgs.nixfmt-rfc-style
+    pkgs.nodejs_20
+    pkgs.obs-studio
+    pkgs.postman
+    pkgs.slack
+    pkgs.sublime-merge
+    pkgs.telegram-desktop
+    pkgs.ventoy
+    updates.google-chrome
+    updates.vscode
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"

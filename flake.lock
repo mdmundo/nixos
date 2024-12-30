@@ -16,22 +16,6 @@
         "type": "github"
       }
     },
-    "fix": {
-      "locked": {
-        "lastModified": 1727639504,
-        "narHash": "sha256-+4Pq4Ojs4VxTxxeoJhsWK6VtLjvayKbAR0jyMjM2z2g=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "fbcfd5812569148bac57d79ff27225b0afd3c205",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "fbcfd5812569148bac57d79ff27225b0afd3c205",
-        "type": "github"
-      }
-    },
     "mini": {
       "locked": {
         "lastModified": 1734600368,
@@ -155,7 +139,6 @@
     "root": {
       "inputs": {
         "dev": "dev",
-        "fix": "fix",
         "mini": "mini",
         "mini-hm": "mini-hm",
         "mini-pm": "mini-pm",

@@ -23,7 +23,7 @@
       inputs.home-manager.follows = "mini-hm";
     };
     dev.url = "github:nixos/nixpkgs/nixos-unstable";
-    fix.url = "github:nixos/nixpkgs/3e4460083ead1e307481991862b72533855ecac2";
+    fix.url = "github:nixos/nixpkgs/fbcfd5812569148bac57d79ff27225b0afd3c205";
   };
 
   outputs =

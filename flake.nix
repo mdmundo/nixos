@@ -58,6 +58,21 @@
         };
       };
       nixosConfigurations = {
+        mini = mini.lib.nixosSystem rec {
+          inherit system;
+          modules = [
+            mini/configuration.nix
+            mini-hm.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.edmundo = import mini/home.nix;
+                sharedModules = [ mini-pm.homeManagerModules.plasma-manager ];
+              };
+            }
+          ];
+        };
         nitro = nitro.lib.nixosSystem rec {
           inherit system;
           specialArgs = {
@@ -76,21 +91,6 @@
                 users.edmundo = import nitro/home.nix;
                 extraSpecialArgs = specialArgs;
                 sharedModules = [ nitro-pm.homeManagerModules.plasma-manager ];
-              };
-            }
-          ];
-        };
-        mini = mini.lib.nixosSystem rec {
-          inherit system;
-          modules = [
-            mini/configuration.nix
-            mini-hm.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.edmundo = import mini/home.nix;
-                sharedModules = [ mini-pm.homeManagerModules.plasma-manager ];
               };
             }
           ];

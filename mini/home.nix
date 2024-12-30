@@ -41,7 +41,7 @@
         height = 44;
         hiding = "dodgewindows";
         lengthMode = "fit";
-        location = "left";
+        location = "bottom";
         widgets = [ "org.kde.plasma.icontasks" ];
       }
       {

@@ -35,6 +35,7 @@
       mini-hm,
       mini-pm,
       dev,
+      fix,
       ...
     }:
     let

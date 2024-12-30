@@ -41,11 +41,20 @@
     in
     {
       packages.x86_64-linux.default = pkgs.hello;
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.corepack_23
-          pkgs.nodejs_23
-        ];
+      packages.x86_64-linux.deno = pkgs.deno;
+      devShells.x86_64-linux = {
+        default = pkgs.mkShell {
+          buildInputs = [
+            pkgs.corepack_23
+            pkgs.nodejs_23
+          ];
+        };
+        node_18 = pkgs.mkShell {
+          buildInputs = [
+            pkgs.corepack_18
+            pkgs.nodejs_18
+          ];
+        };
       };
       nixosConfigurations = {
         nitro = nitro.lib.nixosSystem rec {

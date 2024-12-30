@@ -2,7 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
-    nitro.url = "github:nixos/nixpkgs/7109b680d161993918b0a126f38bc39763e5a709";
+    nitro.url = "github:nixos/nixpkgs/nixos-24.05";
     nitro-hm = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nitro";
@@ -13,7 +13,7 @@
       inputs.home-manager.follows = "nitro-hm";
     };
 
-    mini.url = "github:nixos/nixpkgs/b47fd6fa00c6afca88b8ee46cfdb00e104f50bca";
+    mini.url = "github:nixos/nixpkgs/nixos-24.11";
     mini-hm = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "mini";
@@ -23,6 +23,8 @@
       inputs.nixpkgs.follows = "mini";
       inputs.home-manager.follows = "mini-hm";
     };
+
+    dev.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
@@ -33,9 +35,20 @@
       mini,
       mini-hm,
       mini-pm,
+      dev,
       ...
     }:
+    let
+      pkgs = dev.legacyPackages.x86_64-linux;
+    in
     {
+      packages.x86_64-linux.default = pkgs.hello;
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.corepack_23
+          pkgs.nodejs_23
+        ];
+      };
       nixosConfigurations = {
         nitro = nitro.lib.nixosSystem rec {
           system = "x86_64-linux";

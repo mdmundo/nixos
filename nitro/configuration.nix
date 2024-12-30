@@ -6,7 +6,6 @@
   config,
   pkgs,
   updates,
-  fix,
   ...
 }:
 
@@ -126,8 +125,8 @@
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
-    updates.google-chrome
-    fix.vscode
+    pkgs.google-chrome
+    pkgs.vscode
   ];
 
   nix.settings.experimental-features = [
@@ -188,7 +187,9 @@
       enable = true;
       settings = {
         CPU_BOOST_ON_AC = 0;
+        CPU_BOOST_ON_BAT = 0;
         CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
+        CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
         RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
       };

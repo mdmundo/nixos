@@ -23,7 +23,6 @@
       inputs.home-manager.follows = "mini-hm";
     };
     dev.url = "github:nixos/nixpkgs/nixos-unstable";
-    fix.url = "github:nixos/nixpkgs/fbcfd5812569148bac57d79ff27225b0afd3c205";
   };
 
   outputs =
@@ -35,7 +34,6 @@
       mini-hm,
       mini-pm,
       dev,
-      fix,
       ...
     }:
     let
@@ -43,10 +41,6 @@
       pkgs = import dev { inherit system; };
       specialArgs = {
         updates = import mini {
-          inherit system;
-          config.allowUnfree = true;
-        };
-        fix = import fix {
           inherit system;
           config.allowUnfree = true;
         };

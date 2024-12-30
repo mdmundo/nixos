@@ -21,6 +21,7 @@
 
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
     input = {
       keyboard.numlockOnStartup = "on";
       mice = [
@@ -35,8 +36,35 @@
     };
     panels = [
       {
+        alignment = "center";
         floating = true;
         height = 44;
+        hiding = "dodgewindows";
+        lengthMode = "fit";
+        location = "left";
+        widgets = [ "org.kde.plasma.icontasks" ];
+      }
+      {
+        alignment = "left";
+        floating = true;
+        height = 44;
+        hiding = "dodgewindows";
+        lengthMode = "fit";
+        location = "bottom";
+        widgets = [
+          "org.kde.plasma.kickoff"
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.digitalclock"
+        ];
+      }
+      {
+        alignment = "right";
+        floating = true;
+        height = 44;
+        hiding = "dodgewindows";
+        lengthMode = "fit";
+        location = "bottom";
+        widgets = [ "org.kde.plasma.systemtray" ];
       }
     ];
     kscreenlocker = {
@@ -81,6 +109,7 @@
       "klipperrc"."General"."IgnoreImages" = false;
       "klipperrc"."General"."MaxClipItems" = 2048;
       "ksmserverrc"."General"."loginMode" = "emptySession";
+      "kwinrc"."Effect-overview"."BorderActivate" = 9;
       "kwinrc"."TabBox"."LayoutName" = "compact";
       "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
       "kwinrc"."Xwayland"."Scale" = 1.25;

@@ -19,8 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device =
-    "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
+  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device = "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
   networking.hostName = "nitro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -110,7 +109,6 @@
     pkgs.corepack_20
     pkgs.distrobox
     pkgs.firefox
-    pkgs.google-chrome
     pkgs.gparted
     pkgs.hwinfo
     pkgs.inkscape
@@ -127,7 +125,8 @@
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
-    pkgs.vscode
+    updates.google-chrome
+    updates.vscode
   ];
 
   nix.settings.experimental-features = [

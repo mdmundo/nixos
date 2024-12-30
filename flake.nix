@@ -39,10 +39,18 @@
     let
       system = "x86_64-linux";
       pkgs = import dev { inherit system; };
+      specialArgs = {
+        updates = import mini {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
     in
     {
-      packages.x86_64-linux.default = pkgs.hello;
-      packages.x86_64-linux.deno = pkgs.deno;
+      packages.x86_64-linux = {
+        default = pkgs.hello;
+        deno = pkgs.deno;
+      };
       devShells.x86_64-linux = {
         default = pkgs.mkShell {
           buildInputs = [
@@ -58,7 +66,7 @@
         };
       };
       nixosConfigurations = {
-        mini = mini.lib.nixosSystem rec {
+        mini = mini.lib.nixosSystem {
           inherit system;
           modules = [
             mini/configuration.nix
@@ -73,14 +81,9 @@
             }
           ];
         };
-        nitro = nitro.lib.nixosSystem rec {
+        nitro = nitro.lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            mini = import mini {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          };
+          inherit specialArgs;
           modules = [
             nitro/configuration.nix
             nitro-hm.nixosModules.home-manager

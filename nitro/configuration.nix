@@ -107,6 +107,7 @@
     let
       fix = import (builtins.fetchTarball {
         url = "https://github.com/NixOS/nixpkgs/archive/3e4460083ead1e307481991862b72533855ecac2.tar.gz";
+        sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
       }) { config.allowUnfree = true; };
     in
     [

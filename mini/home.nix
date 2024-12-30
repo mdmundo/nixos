@@ -22,7 +22,18 @@
   programs.plasma = {
     enable = true;
     overrideConfig = true;
-    input.keyboard.numlockOnStartup = "on";
+    input = {
+      keyboard.numlockOnStartup = "on";
+      mice = [
+        {
+          enable = true;
+          leftHanded = true;
+          name = "PixArt Microsoft USB Optical Mouse";
+          productId = "00cb";
+          vendorId = "045e";
+        }
+      ];
+    };
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
       autoLock = false;

@@ -21,7 +21,6 @@
 
   programs.plasma = {
     enable = true;
-    overrideConfig = true;
     input = {
       keyboard.numlockOnStartup = "on";
       mice = [
@@ -34,6 +33,12 @@
         }
       ];
     };
+    panels = [
+      {
+        floating = true;
+        height = 44;
+      }
+    ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
       autoLock = false;

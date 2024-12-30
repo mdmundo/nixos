@@ -19,7 +19,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device = "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
+  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device =
+    "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
   networking.hostName = "nitro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -102,32 +103,38 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
-    pkgs.audacity
-    pkgs.calibre
-    pkgs.chromium
-    pkgs.corepack_20
-    pkgs.distrobox
-    pkgs.firefox
-    pkgs.gparted
-    pkgs.hwinfo
-    pkgs.inkscape
-    pkgs.kdePackages.isoimagewriter
-    pkgs.kdePackages.kdenlive
-    pkgs.kdePackages.ktorrent
-    pkgs.lutris
-    pkgs.mpv
-    pkgs.nixfmt-rfc-style
-    pkgs.nodejs_20
-    pkgs.obs-studio
-    pkgs.postman
-    pkgs.slack
-    pkgs.sublime-merge
-    pkgs.telegram-desktop
-    pkgs.ventoy
-    updates.google-chrome
-    updates.vscode
-  ];
+  environment.systemPackages =
+    let
+      fix = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/3e4460083ead1e307481991862b72533855ecac2.tar.gz";
+      }) { config.allowUnfree = true; };
+    in
+    [
+      pkgs.audacity
+      pkgs.calibre
+      pkgs.chromium
+      pkgs.corepack_20
+      pkgs.distrobox
+      pkgs.firefox
+      pkgs.gparted
+      pkgs.hwinfo
+      pkgs.inkscape
+      pkgs.kdePackages.isoimagewriter
+      pkgs.kdePackages.kdenlive
+      pkgs.kdePackages.ktorrent
+      pkgs.lutris
+      pkgs.mpv
+      pkgs.nixfmt-rfc-style
+      pkgs.nodejs_20
+      pkgs.obs-studio
+      pkgs.postman
+      pkgs.slack
+      pkgs.sublime-merge
+      pkgs.telegram-desktop
+      pkgs.ventoy
+      updates.google-chrome
+      fix.vscode
+    ];
 
   nix.settings.experimental-features = [
     "nix-command"

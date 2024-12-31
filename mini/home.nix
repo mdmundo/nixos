@@ -94,6 +94,7 @@
       "kwinrc"."TabBox"."LayoutName" = "compact";
       "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
       "kwinrc"."Xwayland"."Scale" = 1.25;
+      "plasmanotifyrc"."Notifications"."PopupPosition" = "BottomRight";
       "plasmaparc"."General"."AudioFeedback" = false;
       "spectaclerc"."General"."autoSaveImage" = true;
       "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";

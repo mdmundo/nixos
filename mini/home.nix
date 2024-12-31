@@ -101,7 +101,7 @@
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
     shortcuts = {
-      "ksmserver"."Lock Session" = [ "Pause" ];
+      "ksmserver"."Lock Session" = "Meta+Tab";
       "ksmserver"."Log Out" = "Meta+W";
       "kmix"."decrease_volume" = [
         "Meta+Down"

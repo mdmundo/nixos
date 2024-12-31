@@ -19,7 +19,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "pkgs"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -37,7 +37,7 @@
         "type": "github"
       }
     },
-    "pkgs": {
+    "nixpkgs": {
       "locked": {
         "lastModified": 1734600368,
         "narHash": "sha256-nbG9TijTMcfr+au7ZVbKpAhMJzzE2nQBYmRvSdXUD8g=",
@@ -59,7 +59,7 @@
           "home-manager"
         ],
         "nixpkgs": [
-          "pkgs"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -80,7 +80,7 @@
       "inputs": {
         "dev": "dev",
         "home-manager": "home-manager",
-        "pkgs": "pkgs",
+        "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager"
       }
     }

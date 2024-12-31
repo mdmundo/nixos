@@ -111,7 +111,6 @@
   environment.systemPackages = [
     pkgs.audacity
     pkgs.bibata-cursors
-    pkgs.cascadia-code
     pkgs.chromium
     pkgs.corepack_20
     pkgs.distrobox
@@ -185,6 +184,22 @@
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
         # PCIE_ASPM_ON_AC = "powersave";
+      };
+    };
+  };
+
+  fonts = {
+    packages = [
+      pkgs.cascadia-code
+      pkgs.noto-fonts-color-emoji
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Cascadia Mono" ];
+        sansSerif = [ "Cascadia Mono" ];
+        monospace = [ "Cascadia Mono" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };

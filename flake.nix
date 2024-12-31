@@ -2,37 +2,24 @@
   description = "NixOS configuration";
 
   inputs = {
-    nitro.url = "github:nixos/nixpkgs/nixos-24.05";
-    nitro-hm = {
-      url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nitro";
-    };
-    nitro-pm = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nitro";
-      inputs.home-manager.follows = "nitro-hm";
-    };
-    mini.url = "github:nixos/nixpkgs/nixos-24.11";
-    mini-hm = {
+    pkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "mini";
+      inputs.nixpkgs.follows = "pkgs";
     };
-    mini-pm = {
+    plasma-manager = {
       url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "mini";
-      inputs.home-manager.follows = "mini-hm";
+      inputs.nixpkgs.follows = "pkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     dev.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
     inputs@{
-      nitro,
-      nitro-hm,
-      nitro-pm,
-      mini,
-      mini-hm,
-      mini-pm,
+      pkgs,
+      home-manager,
+      plasma-manager,
       dev,
       ...
     }:
@@ -40,7 +27,7 @@
       system = "x86_64-linux";
       pkgs = import dev { inherit system; };
       specialArgs = {
-        updates = import mini {
+        dev = import dev {
           inherit system;
           config.allowUnfree = true;
         };
@@ -66,34 +53,34 @@
         };
       };
       nixosConfigurations = {
-        mini = mini.lib.nixosSystem {
+        mini = pkgs.lib.nixosSystem {
           inherit system;
           modules = [
             mini/configuration.nix
-            mini-hm.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import mini/home.nix;
-                sharedModules = [ mini-pm.homeManagerModules.plasma-manager ];
+                sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               };
             }
           ];
         };
-        nitro = nitro.lib.nixosSystem {
+        nitro = pkgs.lib.nixosSystem {
           inherit system;
           inherit specialArgs;
           modules = [
             nitro/configuration.nix
-            nitro-hm.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import nitro/home.nix;
                 extraSpecialArgs = specialArgs;
-                sharedModules = [ nitro-pm.homeManagerModules.plasma-manager ];
+                sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               };
             }
           ];

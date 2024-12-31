@@ -2,12 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  config,
-  pkgs,
-  updates,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -19,7 +14,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-edce8522-be8e-4801-b421-a3bcfd70427b".device = "/dev/disk/by-uuid/edce8522-be8e-4801-b421-a3bcfd70427b";
   networking.hostName = "nitro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -31,7 +25,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Araguaina";
+  time.timeZone = "America/Argentina/Buenos_Aires";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -49,7 +43,6 @@
   };
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
@@ -58,6 +51,16 @@
       enable = true;
       wayland.enable = true;
       autoNumlock = true;
+      settings = {
+        Theme = {
+          Font = "Cascadia Mono";
+          CursorSize = "36";
+          CursorTheme = "Bibata-Modern-Ice";
+        };
+        General = {
+          GreeterEnvironment = "QT_SCALE_FACTOR=1.37";
+        };
+      };
     };
     desktopManager.plasma6.enable = true;
   };
@@ -67,6 +70,9 @@
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -104,28 +110,37 @@
   # $ nix search wget
   environment.systemPackages = [
     pkgs.audacity
-    pkgs.calibre
+    pkgs.bibata-cursors
+    pkgs.cascadia-code
     pkgs.chromium
     pkgs.corepack_20
     pkgs.distrobox
+    pkgs.eartag
     pkgs.firefox
-    pkgs.gparted
-    pkgs.hwinfo
-    pkgs.inkscape
+    pkgs.google-chrome
+    pkgs.haruna
+    pkgs.helvum
+    pkgs.kdePackages.filelight
     pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kcalc
+    pkgs.kdePackages.kclock
+    pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
+    pkgs.kdePackages.partitionmanager
     pkgs.lutris
-    pkgs.mpv
+    pkgs.mission-center
+    pkgs.neofetch
     pkgs.nixfmt-rfc-style
     pkgs.nodejs_20
     pkgs.obs-studio
     pkgs.postman
-    pkgs.slack
+    pkgs.resources
+    pkgs.sonusmix
+    pkgs.stress
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
-    pkgs.google-chrome
     pkgs.vscode
   ];
 
@@ -222,4 +237,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
+
 }

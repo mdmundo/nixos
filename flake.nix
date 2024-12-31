@@ -40,14 +40,14 @@
       };
       devShells.x86_64-linux = {
         default = pkgs.mkShell {
-          buildInputs = [
+          packages = [
             pkgs.biome
             pkgs.corepack_23
             pkgs.nodejs_23
           ];
         };
         node_18 = pkgs.mkShell {
-          buildInputs = [
+          packages = [
             pkgs.corepack_18
             pkgs.nodejs_18
           ];

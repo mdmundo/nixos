@@ -36,15 +36,6 @@
     };
     panels = [
       {
-        alignment = "center";
-        floating = true;
-        height = 44;
-        hiding = "dodgewindows";
-        lengthMode = "fit";
-        location = "bottom";
-        widgets = [ "org.kde.plasma.icontasks" ];
-      }
-      {
         alignment = "left";
         floating = true;
         height = 44;
@@ -65,6 +56,15 @@
         lengthMode = "fit";
         location = "bottom";
         widgets = [ "org.kde.plasma.systemtray" ];
+      }
+      {
+        alignment = "center";
+        floating = true;
+        height = 32;
+        hiding = "dodgewindows";
+        lengthMode = "fill";
+        location = "right";
+        widgets = [ "org.kde.plasma.icontasks" ];
       }
     ];
     kscreenlocker = {

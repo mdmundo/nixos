@@ -45,26 +45,8 @@
         widgets = [
           "org.kde.plasma.kickoff"
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.digitalclock"
+          "org.kde.plasma.systemtray"
         ];
-      }
-      {
-        alignment = "right";
-        floating = true;
-        height = 44;
-        hiding = "dodgewindows";
-        lengthMode = "fit";
-        location = "bottom";
-        widgets = [ "org.kde.plasma.systemtray" ];
-      }
-      {
-        alignment = "center";
-        floating = true;
-        height = 32;
-        hiding = "dodgewindows";
-        lengthMode = "fill";
-        location = "right";
-        widgets = [ "org.kde.plasma.icontasks" ];
       }
     ];
     kscreenlocker = {
@@ -120,6 +102,7 @@
     };
     shortcuts = {
       "ksmserver"."Lock Session" = [ "Pause" ];
+      "ksmserver"."Log Out" = "Meta+W";
       "kmix"."decrease_volume" = [
         "Meta+Down"
         "Volume Down"
@@ -128,6 +111,9 @@
         "Meta+Up"
         "Volume Up"
       ];
+      "kwin"."Kill Window" = "Meta+X";
+      "kwin"."Walk Through Windows" = "Meta+A";
+      "kwin"."Walk Through Windows of Current Application" = "Meta+Z";
       "kwin"."Window Close" = [
         "Meta+Q"
         "Alt+F4"

@@ -114,7 +114,7 @@
       ];
       "kwin"."Kill Window" = "Meta+X";
       "kwin"."Walk Through Windows" = "Meta+A";
-      "kwin"."Walk Through Windows of Current Application" = "Meta+Z";
+      "kwin"."Walk Through Windows (Reverse)" = "Meta+Z";
       "kwin"."Window Close" = [
         "Meta+Q"
         "Alt+F4"

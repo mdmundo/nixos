@@ -37,6 +37,7 @@
       packages.x86_64-linux = {
         default = pkgs.hello;
         deno = pkgs.deno;
+        ghostty = pkgs.ghostty;
       };
       devShells.x86_64-linux = {
         default = pkgs.mkShell {

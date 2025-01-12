@@ -92,6 +92,7 @@
       "klipperrc"."General"."MaxClipItems" = 2048;
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwinrc"."Effect-overview"."BorderActivate" = 9;
+      "kwinrc"."Plugins"."shakecursorEnabled" = false;
       "kwinrc"."TabBox"."LayoutName" = "compact";
       "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
       "kwinrc"."Xwayland"."Scale" = 1.25;

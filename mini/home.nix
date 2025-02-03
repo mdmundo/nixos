@@ -40,13 +40,8 @@
         floating = true;
         height = 44;
         hiding = "dodgewindows";
-        lengthMode = "fit";
+        lengthMode = "fill";
         location = "bottom";
-        widgets = [
-          "org.kde.plasma.kickoff"
-          "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.systemtray"
-        ];
       }
     ];
     kscreenlocker = {

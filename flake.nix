@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    dev.url = "github:nixos/nixpkgs/nixos-unstable";
+    dev.url = "github:nixos/nixpkgs/nixos-24.11";
   };
 
   outputs =

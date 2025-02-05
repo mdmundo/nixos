@@ -121,7 +121,7 @@
     pkgs.distrobox
     pkgs.eartag
     pkgs.firefox
-    dev.google-chrome
+    pkgs.google-chrome
     pkgs.haruna
     pkgs.helvum
     pkgs.kdePackages.filelight

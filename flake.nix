@@ -57,6 +57,7 @@
       nixosConfigurations = {
         mini = nixpkgs.lib.nixosSystem {
           inherit system;
+          inherit specialArgs;
           modules = [
             mini/configuration.nix
             home-manager.nixosModules.home-manager

@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  dev,
+  ...
+}:
 
 {
   imports = [
@@ -116,7 +121,7 @@
     pkgs.distrobox
     pkgs.eartag
     pkgs.firefox
-    pkgs.google-chrome
+    dev.google-chrome
     pkgs.haruna
     pkgs.helvum
     pkgs.kdePackages.filelight
@@ -141,7 +146,7 @@
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
-    pkgs.vscode
+    dev.vscode
   ];
 
   nix.settings.experimental-features = [

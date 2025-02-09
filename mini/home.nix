@@ -83,7 +83,7 @@
     };
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
-      "klipperrc"."General"."MaxClipItems" = 2048;
+      "klipperrc"."General"."MaxClipItems" = 512;
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwinrc"."Effect-overview"."BorderActivate" = 9;
       "kwinrc"."Plugins"."shakecursorEnabled" = false;

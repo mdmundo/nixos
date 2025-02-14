@@ -38,7 +38,7 @@
         alignment = "left";
         floating = true;
         height = 44;
-        hiding = "dodgewindows";
+        hiding = "none";
         lengthMode = "fill";
         location = "bottom";
       }

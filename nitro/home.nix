@@ -21,7 +21,6 @@
 
   programs.plasma = {
     enable = true;
-    overrideConfig = true;
     input = {
       keyboard.numlockOnStartup = "on";
       mice = [
@@ -39,14 +38,9 @@
         alignment = "left";
         floating = true;
         height = 44;
-        hiding = "dodgewindows";
-        lengthMode = "fit";
+        hiding = "none";
+        lengthMode = "fill";
         location = "bottom";
-        widgets = [
-          "org.kde.plasma.kickoff"
-          "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.systemtray"
-        ];
       }
     ];
     kscreenlocker = {
@@ -89,12 +83,14 @@
     };
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;
-      "klipperrc"."General"."MaxClipItems" = 2048;
+      "klipperrc"."General"."MaxClipItems" = 256;
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwinrc"."Effect-overview"."BorderActivate" = 9;
+      "kwinrc"."Plugins"."shakecursorEnabled" = false;
       "kwinrc"."TabBox"."LayoutName" = "compact";
       "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
       "kwinrc"."Xwayland"."Scale" = 1.25;
+      "plasmanotifyrc"."Notifications"."PopupPosition" = "BottomRight";
       "plasmaparc"."General"."AudioFeedback" = false;
       "spectaclerc"."General"."autoSaveImage" = true;
       "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
@@ -113,7 +109,7 @@
       ];
       "kwin"."Kill Window" = "Meta+X";
       "kwin"."Walk Through Windows" = "Meta+A";
-      "kwin"."Walk Through Windows of Current Application" = "Meta+Z";
+      "kwin"."Walk Through Windows (Reverse)" = "Meta+Z";
       "kwin"."Window Close" = [
         "Meta+Q"
         "Alt+F4"

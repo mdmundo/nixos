@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  dev,
+  ...
+}:
 
 {
   imports = [
@@ -111,9 +116,8 @@
   environment.systemPackages = [
     pkgs.audacity
     pkgs.bibata-cursors
-    pkgs.cascadia-code
     pkgs.chromium
-    pkgs.corepack_20
+    pkgs.corepack_22
     pkgs.distrobox
     pkgs.eartag
     pkgs.firefox
@@ -127,12 +131,13 @@
     pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
+    pkgs.kdePackages.merkuro
     pkgs.kdePackages.partitionmanager
     pkgs.lutris
     pkgs.mission-center
     pkgs.neofetch
     pkgs.nixfmt-rfc-style
-    pkgs.nodejs_20
+    pkgs.nodejs_22
     pkgs.obs-studio
     pkgs.postman
     pkgs.resources
@@ -141,7 +146,7 @@
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
-    pkgs.vscode
+    dev.vscode
   ];
 
   nix.settings.experimental-features = [
@@ -207,6 +212,22 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
         RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+      };
+    };
+  };
+
+  fonts = {
+    packages = [
+      pkgs.cascadia-code
+      pkgs.noto-fonts-color-emoji
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Cascadia Mono" ];
+        sansSerif = [ "Cascadia Mono" ];
+        monospace = [ "Cascadia Mono" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };

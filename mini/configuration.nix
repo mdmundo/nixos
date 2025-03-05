@@ -139,13 +139,13 @@
     pkgs.nixfmt-rfc-style
     pkgs.nodejs_22
     pkgs.obs-studio
-    pkgs.postman
     pkgs.resources
     pkgs.sonusmix
     pkgs.stress
     pkgs.sublime-merge
     pkgs.telegram-desktop
     pkgs.ventoy
+    dev.postman
     dev.vscode
   ];
 

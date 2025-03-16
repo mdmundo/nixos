@@ -128,10 +128,8 @@
     pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kcalc
     pkgs.kdePackages.kclock
-    pkgs.kdePackages.kcolorchooser
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
-    pkgs.kdePackages.merkuro
     pkgs.kdePackages.partitionmanager
     pkgs.lutris
     pkgs.mission-center

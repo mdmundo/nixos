@@ -138,6 +138,7 @@
     pkgs.nodejs_22
     pkgs.obs-studio
     pkgs.resources
+    pkgs.sigil
     pkgs.sonusmix
     pkgs.stress
     pkgs.sublime-merge

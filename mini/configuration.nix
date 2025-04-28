@@ -66,7 +66,7 @@
           CursorTheme = "Bibata-Modern-Ice";
         };
         General = {
-          GreeterEnvironment = "QT_SCALE_FACTOR=1.37";
+          GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
         };
       };
     };

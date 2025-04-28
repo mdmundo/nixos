@@ -56,6 +56,9 @@
       enable = true;
       wayland.enable = true;
       autoNumlock = true;
+      autoLogin = {
+        user = "edmundo";
+      };
       settings = {
         Theme = {
           Font = "Cascadia Mono";

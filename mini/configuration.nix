@@ -119,7 +119,7 @@
     # pkgs.audacity
     pkgs.bibata-cursors
     # pkgs.chromium
-    # pkgs.corepack_22
+    pkgs.corepack_22
     # pkgs.distrobox
     # pkgs.eartag
     # pkgs.firefox
@@ -137,7 +137,7 @@
     # pkgs.mission-center
     # pkgs.neofetch
     pkgs.nixfmt-rfc-style
-    # pkgs.nodejs_22
+    pkgs.nodejs_22
     # pkgs.obs-studio
     pkgs.resources
     # pkgs.sigil

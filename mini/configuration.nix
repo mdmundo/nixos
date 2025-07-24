@@ -5,7 +5,6 @@
 {
   config,
   pkgs,
-  dev,
   ...
 }:
 
@@ -117,49 +116,44 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.audacity
+    # pkgs.audacity
     pkgs.bibata-cursors
-    pkgs.chromium
-    pkgs.corepack_22
-    pkgs.distrobox
-    pkgs.eartag
-    pkgs.firefox
+    # pkgs.chromium
+    # pkgs.corepack_22
+    # pkgs.distrobox
+    # pkgs.eartag
+    # pkgs.firefox
     pkgs.google-chrome
     pkgs.haruna
-    pkgs.helvum
-    pkgs.kdePackages.filelight
-    pkgs.kdePackages.isoimagewriter
+    # pkgs.helvum
+    # pkgs.kdePackages.filelight
+    # pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kcalc
-    pkgs.kdePackages.kclock
-    pkgs.kdePackages.kdenlive
-    pkgs.kdePackages.ktorrent
-    pkgs.kdePackages.partitionmanager
-    pkgs.lutris
-    pkgs.mission-center
-    pkgs.neofetch
+    # pkgs.kdePackages.kclock
+    # pkgs.kdePackages.kdenlive
+    # pkgs.kdePackages.ktorrent
+    # pkgs.kdePackages.partitionmanager
+    # pkgs.lutris
+    # pkgs.mission-center
+    # pkgs.neofetch
     pkgs.nixfmt-rfc-style
-    pkgs.nodejs_22
-    pkgs.obs-studio
+    # pkgs.nodejs_22
+    # pkgs.obs-studio
     pkgs.resources
-    pkgs.sigil
-    pkgs.sonusmix
-    pkgs.stress
-    pkgs.sublime-merge
+    # pkgs.sigil
+    # pkgs.sonusmix
+    # pkgs.stress
+    # pkgs.sublime-merge
     pkgs.telegram-desktop
-    pkgs.ventoy
-    dev.postman
-    dev.vscode
+    # pkgs.ventoy
+    # dev.postman
+    pkgs.vscode
   ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
-  virtualisation = {
-    containers.enable = true;
-    podman.enable = true;
-  };
 
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -175,19 +169,12 @@
 
   hardware.bluetooth.enable = true;
 
-  programs.tuxclocker = {
-    enable = true;
-    enableAMD = true;
-  };
-
-  services.openssh.enable = true;
-
   services = {
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;
       settings = {
-        CPU_SCALING_MAX_FREQ_ON_AC = 2000000;
+        CPU_SCALING_MAX_FREQ_ON_AC = 3000000;
         CPU_SCALING_GOVERNOR_ON_AC = "powersave";
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
@@ -211,9 +198,6 @@
       };
     };
   };
-
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "edmundo" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

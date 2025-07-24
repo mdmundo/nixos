@@ -116,8 +116,37 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    # pkgs.audacity
     pkgs.bibata-cursors
+    # pkgs.chromium
+    # pkgs.corepack_22
+    # pkgs.distrobox
+    # pkgs.eartag
+    # pkgs.firefox
     pkgs.google-chrome
+    pkgs.haruna
+    # pkgs.helvum
+    # pkgs.kdePackages.filelight
+    # pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.kcalc
+    # pkgs.kdePackages.kclock
+    # pkgs.kdePackages.kdenlive
+    # pkgs.kdePackages.ktorrent
+    # pkgs.kdePackages.partitionmanager
+    # pkgs.lutris
+    # pkgs.mission-center
+    # pkgs.neofetch
+    pkgs.nixfmt-rfc-style
+    # pkgs.nodejs_22
+    # pkgs.obs-studio
+    pkgs.resources
+    # pkgs.sigil
+    # pkgs.sonusmix
+    # pkgs.stress
+    # pkgs.sublime-merge
+    pkgs.telegram-desktop
+    # pkgs.ventoy
+    # dev.postman
     pkgs.vscode
   ];
 

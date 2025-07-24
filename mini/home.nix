@@ -21,6 +21,7 @@
 
   programs.plasma = {
     enable = true;
+    overrideConfig = true;
     input = {
       keyboard.numlockOnStartup = "on";
       mice = [

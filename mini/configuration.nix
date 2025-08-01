@@ -139,6 +139,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.nodejs_22
     # pkgs.obs-studio
+    # pkgs.pdfarranger
     pkgs.resources
     # pkgs.sigil
     # pkgs.sonusmix

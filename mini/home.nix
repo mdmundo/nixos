@@ -98,7 +98,6 @@
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
     shortcuts = {
-      "ksmserver"."Lock Session" = "Meta+Tab";
       "ksmserver"."Log Out" = "Meta+W";
       "kmix"."decrease_volume" = [
         "Meta+Down"
@@ -109,22 +108,20 @@
         "Volume Up"
       ];
       "kwin"."Kill Window" = "Meta+X";
-      "kwin"."Walk Through Windows" = "Meta+A";
-      "kwin"."Walk Through Windows (Reverse)" = "Meta+Z";
       "kwin"."Window Close" = [
         "Meta+Q"
         "Alt+F4"
       ];
       "mediacontrol"."nextmedia" = [
-        "Meta+L"
+        "Meta+Shift+Right"
         "Media Next"
       ];
       "mediacontrol"."playpausemedia" = [
-        "Meta+K"
+        "Meta+Shift+Down"
         "Media Play"
       ];
       "mediacontrol"."previousmedia" = [
-        "Meta+J"
+        "Meta+Shift+Left"
         "Media Previous"
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";

@@ -118,6 +118,7 @@
   environment.systemPackages = [
     # pkgs.audacity
     pkgs.bibata-cursors
+    pkgs.caligula
     # pkgs.chromium
     pkgs.corepack_22
     # pkgs.distrobox

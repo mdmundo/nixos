@@ -98,6 +98,7 @@
       "spectaclerc"."General"."useReleaseToCapture" = true;
     };
     shortcuts = {
+      "ksmserver"."Halt Without Confirmation" = "Meta+Del";
       "ksmserver"."Log Out" = "Meta+W";
       "kmix"."decrease_volume" = [
         "Meta+Down"
@@ -126,6 +127,7 @@
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
+      "org_kde_powerdevil"."Sleep" = "Meta+Ins";
       "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = "Meta+S";
     };
   };

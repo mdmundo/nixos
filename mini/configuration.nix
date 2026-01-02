@@ -132,7 +132,7 @@
     pkgs.kdePackages.kcalc
     # pkgs.kdePackages.kclock
     # pkgs.kdePackages.kdenlive
-    # pkgs.kdePackages.ktorrent
+    pkgs.kdePackages.ktorrent
     # pkgs.kdePackages.partitionmanager
     # pkgs.lutris
     # pkgs.mission-center

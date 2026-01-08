@@ -47,17 +47,14 @@
           {
             kickoff = {
               sortAlphabetically = true;
-              icon = "nix-snowflake-white";
+              icon = "nix-snowflake";
             };
           }
           {
             iconTasks = {
               behavior = {
                 grouping.method = "none";
-                wheel = {
-                  switchBetweenTasks = false;
-                  ignoreMinimizedTasks = true;
-                };
+                wheel.switchBetweenTasks = "AllTask";
               };
               launchers = [
                 "applications:google-chrome.desktop"

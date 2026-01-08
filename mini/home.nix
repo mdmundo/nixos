@@ -52,10 +52,8 @@
           }
           {
             iconTasks = {
-              behavior = {
-                grouping.method = "none";
-                wheel.switchBetweenTasks = "AllTask";
-              };
+              behavior.grouping.method = "none";
+              settings.General.wheelEnabled = "AllTask";
               launchers = [
                 "applications:google-chrome.desktop"
                 "applications:code.desktop"

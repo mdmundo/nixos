@@ -67,7 +67,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import mini/home.nix;
-                sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               };
             }
           ];
@@ -84,7 +84,7 @@
                 useUserPackages = true;
                 users.edmundo = import nitro/home.nix;
                 extraSpecialArgs = specialArgs;
-                sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               };
             }
           ];

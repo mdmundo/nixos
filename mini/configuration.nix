@@ -51,21 +51,23 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services = {
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      autoNumlock = true;
+    displayManager = {
       autoLogin = {
         user = "edmundo";
       };
-      settings = {
-        Theme = {
-          Font = "Cascadia Mono";
-          CursorSize = "36";
-          CursorTheme = "Bibata-Modern-Ice";
-        };
-        General = {
-          GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        autoNumlock = true;
+        settings = {
+          Theme = {
+            Font = "Cascadia Mono";
+            CursorSize = "36";
+            CursorTheme = "Bibata-Modern-Ice";
+          };
+          General = {
+            GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
+          };
         };
       };
     };
@@ -82,7 +84,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

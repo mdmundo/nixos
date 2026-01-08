@@ -21,7 +21,7 @@
 
   programs.plasma = {
     enable = true;
-    overrideConfig = true;
+    # overrideConfig = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";
@@ -46,8 +46,13 @@
         widgets = [
           {
             kickoff = {
-              sortAlphabetically = true;
               icon = "nix-snowflake";
+              sortAlphabetically = true;
+              sidebarPosition = "right";
+              favoritesDisplayMode = "list";
+              showButtonsFor = "powerAndSession";
+              showActionButtonCaptions = false;
+              settings.General.switchCategoryOnHover = true;
             };
           }
           {

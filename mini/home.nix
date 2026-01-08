@@ -47,7 +47,7 @@
           {
             kickoff = {
               sortAlphabetically = true;
-              icon = "nix-snowflake";
+              icon = "nix-snowflake-white";
             };
           }
           {
@@ -55,7 +55,7 @@
               behavior = {
                 grouping.method = "none";
                 wheel = {
-                  switchBetweenTasks = true;
+                  switchBetweenTasks = false;
                   ignoreMinimizedTasks = true;
                 };
               };

@@ -2,9 +2,9 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
@@ -36,18 +36,19 @@
     {
       packages.x86_64-linux = {
         default = pkgs.hello;
+        # nix shell .#deno
         deno = pkgs.deno;
         ghostty = pkgs.ghostty;
       };
       devShells.x86_64-linux = {
         default = pkgs.mkShell {
           packages = [
-            pkgs.biome
-            pkgs.corepack_23
-            pkgs.nodejs_23
+            pkgs.corepack_24
+            pkgs.nodejs_24
           ];
         };
-        node_18 = pkgs.mkShell {
+        node18 = pkgs.mkShell {
+          # nix develop .#node
           packages = [
             pkgs.corepack_18
             pkgs.nodejs_18

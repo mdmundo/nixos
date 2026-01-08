@@ -118,9 +118,8 @@
   environment.systemPackages = [
     # pkgs.audacity
     pkgs.bibata-cursors
-    pkgs.caligula
+    # pkgs.caligula
     # pkgs.chromium
-    pkgs.corepack_22
     # pkgs.distrobox
     # pkgs.eartag
     # pkgs.firefox
@@ -138,7 +137,6 @@
     # pkgs.mission-center
     # pkgs.neofetch
     pkgs.nixfmt-rfc-style
-    pkgs.nodejs_22
     # pkgs.obs-studio
     # pkgs.pdfarranger
     pkgs.resources

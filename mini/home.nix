@@ -99,7 +99,6 @@
     };
     shortcuts = {
       "ksmserver"."Halt Without Confirmation" = "Meta+Del";
-      "ksmserver"."Log Out" = "Meta+W";
       "kmix"."decrease_volume" = [
         "Meta+Down"
         "Volume Down"

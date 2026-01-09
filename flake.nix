@@ -25,12 +25,9 @@
     }:
     let
       system = "x86_64-linux";
-      pkgs = import dev { inherit system; };
-      specialArgs = {
-        dev = import dev {
-          inherit system;
-          config.allowUnfree = true;
-        };
+      pkgs = import dev {
+        inherit system;
+        config.allowUnfree = true;
       };
     in
     {
@@ -39,14 +36,15 @@
         deno = pkgs.deno;
       };
       devShells.x86_64-linux = {
-        default = pkgs.mkShell { nativeBuildInputs = [ pkgs.hello ]; };
-        node = pkgs.mkShell { packages = [ pkgs.nodejs ]; };
-        host = pkgs.mkShell { shellHook = "exec code"; };
+        default = pkgs.mkShell {
+          packages = [ pkgs.vscode ];
+          shellHook = "exec code";
+        };
+        hello = pkgs.mkShell { nativeBuildInputs = [ pkgs.hello ]; };
       };
       nixosConfigurations = {
         mini = nixpkgs.lib.nixosSystem {
           inherit system;
-          inherit specialArgs;
           modules = [
             mini/configuration.nix
             home-manager.nixosModules.home-manager
@@ -55,23 +53,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.edmundo = import mini/home.nix;
-                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              };
-            }
-          ];
-        };
-        nitro = nixpkgs.lib.nixosSystem {
-          inherit system;
-          inherit specialArgs;
-          modules = [
-            nitro/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.edmundo = import nitro/home.nix;
-                extraSpecialArgs = specialArgs;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               };
             }

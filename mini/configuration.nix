@@ -2,11 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -147,8 +143,8 @@
     # pkgs.sublime-merge
     pkgs.telegram-desktop
     # pkgs.ventoy
-    # dev.postman
-    pkgs.vscode
+    # pkgs.postman
+    # pkgs.vscode
   ];
 
   nix.settings.experimental-features = [

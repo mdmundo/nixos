@@ -60,9 +60,8 @@
               behavior.grouping.method = "none";
               settings.General.wheelEnabled = "AllTask";
               launchers = [
-                "applications:google-chrome.desktop"
-                "applications:code.desktop"
                 "applications:org.kde.dolphin.desktop"
+                "applications:google-chrome.desktop"
               ];
             };
           }

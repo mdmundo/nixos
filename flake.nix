@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    dev.url = "github:nixos/nixpkgs/nixos-24.11";
+    dev.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
@@ -37,22 +37,10 @@
       packages.x86_64-linux = {
         default = pkgs.hello;
         deno = pkgs.deno;
-        ghostty = pkgs.ghostty;
       };
       devShells.x86_64-linux = {
-        default = pkgs.mkShell {
-          packages = [
-            pkgs.biome
-            pkgs.corepack_23
-            pkgs.nodejs_23
-          ];
-        };
-        node_18 = pkgs.mkShell {
-          packages = [
-            pkgs.corepack_18
-            pkgs.nodejs_18
-          ];
-        };
+        default = pkgs.mkShell { packages = [ pkgs.hello ]; };
+        node = pkgs.mkShell { packages = [ pkgs.nodejs ]; };
       };
       nixosConfigurations = {
         mini = nixpkgs.lib.nixosSystem {

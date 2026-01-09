@@ -39,8 +39,9 @@
         deno = pkgs.deno;
       };
       devShells.x86_64-linux = {
-        default = pkgs.mkShell { packages = [ pkgs.hello ]; };
+        default = pkgs.mkShell { nativeBuildInputs = [ pkgs.hello ]; };
         node = pkgs.mkShell { packages = [ pkgs.nodejs ]; };
+        host = pkgs.mkShell { shellHook = "exec code"; };
       };
       nixosConfigurations = {
         mini = nixpkgs.lib.nixosSystem {

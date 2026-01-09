@@ -128,10 +128,10 @@
     pkgs.google-chrome
     pkgs.haruna
     # pkgs.helvum
-    # pkgs.kdePackages.filelight
-    # pkgs.kdePackages.isoimagewriter
+    pkgs.kdePackages.filelight
+    pkgs.kdePackages.isoimagewriter
     pkgs.kdePackages.kcalc
-    # pkgs.kdePackages.kclock
+    pkgs.kdePackages.kclock
     # pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
     # pkgs.kdePackages.partitionmanager
@@ -143,7 +143,6 @@
     # pkgs.pdfarranger
     pkgs.resources
     # pkgs.sigil
-    # pkgs.sonusmix
     # pkgs.stress
     # pkgs.sublime-merge
     pkgs.telegram-desktop

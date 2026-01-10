@@ -48,9 +48,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services = {
     displayManager = {
-      autoLogin = {
-        user = "edmundo";
-      };
+      autoLogin.user = "edmundo";
       sddm = {
         enable = true;
         wayland.enable = true;
@@ -61,9 +59,7 @@
             CursorSize = "36";
             CursorTheme = "Bibata-Modern-Ice";
           };
-          General = {
-            GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
-          };
+          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
         };
       };
     };
@@ -137,14 +133,14 @@
     pkgs.nixfmt-rfc-style
     # pkgs.obs-studio
     # pkgs.pdfarranger
+    # pkgs.postman
     pkgs.resources
     # pkgs.sigil
     # pkgs.stress
     # pkgs.sublime-merge
     pkgs.telegram-desktop
     # pkgs.ventoy
-    # pkgs.postman
-    # pkgs.vscode
+    pkgs.vscode
   ];
 
   nix.settings.experimental-features = [

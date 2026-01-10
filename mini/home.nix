@@ -21,7 +21,7 @@
 
   programs.plasma = {
     enable = true;
-    # overrideConfig = true;
+    overrideConfig = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";
@@ -61,6 +61,7 @@
               settings.General.wheelEnabled = "AllTask";
               launchers = [
                 "applications:org.kde.dolphin.desktop"
+                "applications:code.desktop"
                 "applications:google-chrome.desktop"
               ];
             };

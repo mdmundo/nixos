@@ -68,10 +68,7 @@
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.systemtray"
-          {
-            digitalClock.time.showSeconds = "always";
-          }
-          "org.kde.plasma.showdesktop"
+          "org.kde.plasma.digitalclock"
         ];
       }
     ];

@@ -36,6 +36,10 @@
         default = pkgs.mkShell { nativeBuildInputs = [ pkgs.hello ]; };
         node = pkgs.mkShell { packages = [ pkgs.nodejs ]; };
         host = pkgs.mkShell { shellHook = "exec code"; };
+        bun = pkgs.mkShellNoCC {
+          packages = [ pkgs.bun ];
+          shellHook = "exec code";
+        };
       };
       nixosConfigurations = {
         mini = nixpkgs.lib.nixosSystem {

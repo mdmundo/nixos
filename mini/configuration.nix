@@ -102,6 +102,10 @@
       "networkmanager"
       "wheel"
     ];
+    packages = with pkgs; [
+      nixfmt
+      bun
+    ];
   };
 
   # Allow unfree packages
@@ -130,7 +134,7 @@
     # pkgs.lutris
     # pkgs.mission-center
     # pkgs.neofetch
-    pkgs.nixfmt-rfc-style
+    # pkgs.nixfmt-rfc-style
     # pkgs.obs-studio
     # pkgs.pdfarranger
     # pkgs.postman

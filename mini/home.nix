@@ -37,12 +37,6 @@
     };
     panels = [
       {
-        alignment = "left";
-        floating = true;
-        height = 44;
-        hiding = "none";
-        lengthMode = "fill";
-        location = "bottom";
         widgets = [
           {
             kickoff = {

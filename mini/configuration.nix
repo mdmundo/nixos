@@ -105,6 +105,7 @@
     packages = with pkgs; [
       nixfmt
       bun
+      gleam
     ];
   };
 

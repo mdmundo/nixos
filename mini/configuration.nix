@@ -110,6 +110,8 @@
       gleam
       beamMinimal28Packages.rebar3
       beamMinimal28Packages.erlang
+      #
+      exercism
     ];
   };
 

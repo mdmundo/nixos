@@ -74,7 +74,7 @@
       colorScheme = "BreezeDark";
       cursor = {
         size = 24;
-        theme = "Bibata-Modern-Ice";
+        theme = "Bibata-Modern-Classic";
       };
       wallpaperPictureOfTheDay.provider = "bing";
       wallpaperFillMode = "preserveAspectCrop";

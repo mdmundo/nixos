@@ -71,6 +71,7 @@
       autoLock = false;
     };
     workspace = {
+      colorScheme = "BreezeDark";
       cursor = {
         size = 24;
         theme = "Bibata-Modern-Ice";

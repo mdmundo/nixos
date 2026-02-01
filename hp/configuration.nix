@@ -25,7 +25,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Argentina/Buenos_Aires";
+  time.timeZone = "America/Araguaina";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -66,10 +66,13 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "intl";
+  };
 
   # Configure console keymap
-  console.keyMap = "us";
+  console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

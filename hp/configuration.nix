@@ -189,11 +189,9 @@
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
 
         WIFI_PWR_ON_AC = "off";
+
         INTEL_GPU_MAX_FREQ_ON_AC = 625;
         INTEL_GPU_BOOST_FREQ_ON_AC = 625;
-
-        START_CHARGE_THRESH_BAT0 = 75;
-        STOP_CHARGE_THRESH_BAT0 = 85;
       };
     };
   };

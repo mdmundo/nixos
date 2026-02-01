@@ -38,16 +38,16 @@
         host = pkgs.mkShell { shellHook = "exec code"; };
       };
       nixosConfigurations = {
-        mini = nixpkgs.lib.nixosSystem {
+        hp = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            mini/configuration.nix
+            hp/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.edmundo = import mini/home.nix;
+                users.edmundo = import hp/home.nix;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               };
             }

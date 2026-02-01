@@ -1,0 +1,246 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "hp"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "America/Argentina/Buenos_Aires";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_CA.UTF-8";
+    LC_IDENTIFICATION = "en_CA.UTF-8";
+    LC_MEASUREMENT = "en_CA.UTF-8";
+    LC_MONETARY = "en_CA.UTF-8";
+    LC_NAME = "en_CA.UTF-8";
+    LC_NUMERIC = "en_CA.UTF-8";
+    LC_PAPER = "en_CA.UTF-8";
+    LC_TELEPHONE = "en_CA.UTF-8";
+    LC_TIME = "en_CA.UTF-8";
+  };
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services = {
+    displayManager = {
+      autoLogin.user = "edmundo";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        autoNumlock = true;
+        settings = {
+          Theme = {
+            Font = "Cascadia Mono";
+            CursorSize = "36";
+            CursorTheme = "Bibata-Modern-Ice";
+          };
+          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.125";
+        };
+      };
+    };
+    desktopManager.plasma6.enable = true;
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb.layout = "br";
+
+  # Configure console keymap
+  console.keyMap = "br-abnt2";
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.edmundo = {
+    isNormalUser = true;
+    hashedPassword = "$y$j9T$Fe7PmPEJmYDMwNKmYC7931$X.SLvgVeaR7zOBnO2tukTdQ.NsdlP67Ow6dHifX2uo9";
+    description = "Edmundo";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+      nixfmt
+      #
+      # bun
+      #
+      # gleam
+      # beamMinimal28Packages.rebar3
+      # beamMinimal28Packages.erlang
+      #
+      # exercism
+    ];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = [
+    # pkgs.audacity
+    pkgs.bibata-cursors
+    # pkgs.caligula
+    # pkgs.chromium
+    # pkgs.distrobox
+    # pkgs.eartag
+    # pkgs.firefox
+    pkgs.google-chrome
+    # pkgs.haruna
+    # pkgs.helvum
+    # pkgs.kdePackages.filelight
+    # pkgs.kdePackages.isoimagewriter
+    # pkgs.kdePackages.kcalc
+    # pkgs.kdePackages.kclock
+    # pkgs.kdePackages.kdenlive
+    # pkgs.kdePackages.ktorrent
+    # pkgs.kdePackages.partitionmanager
+    # pkgs.lutris
+    # pkgs.mission-center
+    # pkgs.neofetch
+    # pkgs.nixfmt-rfc-style
+    # pkgs.obs-studio
+    # pkgs.pdfarranger
+    # pkgs.postman
+    # pkgs.resources
+    # pkgs.sigil
+    # pkgs.stress
+    # pkgs.sublime-merge
+    # pkgs.telegram-desktop
+    # pkgs.ventoy
+    pkgs.vscode
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "Edmundo";
+      user.email = "60408300+mdmundo@users.noreply.github.com";
+      init.defaultBranch = "main";
+    };
+  };
+
+  hardware.bluetooth.enable = true;
+
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        TLP_DEFAULT_MODE = "AC";
+        TLP_PERSISTENT_DEFAULT = 1;
+
+        CPU_SCALING_MAX_FREQ_ON_AC = 2000000;
+        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "power";
+
+        WIFI_PWR_ON_AC = "off";
+        INTEL_GPU_MAX_FREQ_ON_AC = 625;
+        INTEL_GPU_BOOST_FREQ_ON_AC = 625;
+
+        START_CHARGE_THRESH_BAT0 = 75;
+        STOP_CHARGE_THRESH_BAT0 = 85;
+      };
+    };
+  };
+
+  fonts = {
+    packages = [
+      pkgs.cascadia-code
+      pkgs.noto-fonts-color-emoji
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Cascadia Mono" ];
+        sansSerif = [ "Cascadia Mono" ];
+        monospace = [ "Cascadia Mono" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
+    };
+  };
+
+  programs.nh.enable = true;
+
+  #   services.stirling-pdf.enable = true;
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.11"; # Did you read the comment?
+
+}

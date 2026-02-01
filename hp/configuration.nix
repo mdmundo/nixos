@@ -56,10 +56,9 @@
         settings = {
           Theme = {
             Font = "Cascadia Mono";
-            CursorSize = "36";
+            CursorSize = "24";
             CursorTheme = "Bibata-Modern-Ice";
           };
-          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.125";
         };
       };
     };
@@ -67,10 +66,10 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "br";
+  services.xserver.xkb.layout = "us";
 
   # Configure console keymap
-  console.keyMap = "br-abnt2";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -214,7 +213,7 @@
 
   programs.nh.enable = true;
 
-  #   services.stirling-pdf.enable = true;
+  # services.stirling-pdf.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

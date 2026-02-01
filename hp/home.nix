@@ -28,10 +28,22 @@
       mice = [
         {
           enable = true;
-          leftHanded = true;
           name = "PixArt Microsoft USB Optical Mouse";
           productId = "00cb";
           vendorId = "045e";
+
+          leftHanded = true;
+        }
+      ];
+      touchpads = [
+        {
+          enable = true;
+          name = "ELAN0712:00 04F3:30FD Touchpad";
+          productId = "30fd";
+          vendorId = "04f3";
+
+          disableWhileTyping = false;
+          naturalScroll = true;
         }
       ];
     };

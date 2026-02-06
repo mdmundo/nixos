@@ -107,14 +107,7 @@
     ];
     packages = with pkgs; [
       nixfmt
-      #
-      # bun
-      #
-      # gleam
-      # beamMinimal28Packages.rebar3
-      # beamMinimal28Packages.erlang
-      #
-      # exercism
+      resources
     ];
   };
 

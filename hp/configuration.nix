@@ -178,13 +178,8 @@
         TLP_PERSISTENT_DEFAULT = 1;
 
         CPU_BOOST_ON_AC = 0;
-        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-
-        WIFI_PWR_ON_AC = "off";
-
-        INTEL_GPU_MAX_FREQ_ON_AC = 625;
-        INTEL_GPU_BOOST_FREQ_ON_AC = 625;
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
       };
     };
   };

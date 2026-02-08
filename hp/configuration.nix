@@ -178,6 +178,7 @@
         TLP_PERSISTENT_DEFAULT = 1;
 
         CPU_BOOST_ON_AC = 0;
+        CPU_SCALING_MAX_FREQ_ON_AC = 2200000;
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
       };

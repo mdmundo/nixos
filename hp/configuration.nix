@@ -177,7 +177,7 @@
         TLP_DEFAULT_MODE = "AC";
         TLP_PERSISTENT_DEFAULT = 1;
 
-        CPU_SCALING_MAX_FREQ_ON_AC = 2000000;
+        CPU_BOOST_ON_AC = 0;
         CPU_SCALING_GOVERNOR_ON_AC = "powersave";
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
 
@@ -207,7 +207,7 @@
 
   programs.nh.enable = true;
 
-  # services.stirling-pdf.enable = true;
+  services.earlyoom.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

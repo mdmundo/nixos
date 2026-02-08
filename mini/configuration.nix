@@ -137,7 +137,7 @@
     pkgs.kdePackages.kclock
     # pkgs.kdePackages.kdenlive
     pkgs.kdePackages.ktorrent
-    # pkgs.kdePackages.partitionmanager
+    pkgs.kdePackages.partitionmanager
     # pkgs.lutris
     # pkgs.mission-center
     # pkgs.neofetch
@@ -182,7 +182,6 @@
         CPU_SCALING_GOVERNOR_ON_AC = "powersave";
         CPU_ENERGY_PERF_POLICY_ON_AC = "power";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
-        # PCIE_ASPM_ON_AC = "powersave";
       };
     };
   };

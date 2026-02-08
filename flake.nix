@@ -53,6 +53,21 @@
             }
           ];
         };
+        mini = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            mini/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.edmundo = import mini/home.nix;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+              };
+            }
+          ];
+        };
       };
     };
 }

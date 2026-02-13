@@ -12,7 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    dev.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
@@ -20,26 +19,12 @@
       nixpkgs,
       home-manager,
       plasma-manager,
-      dev,
       ...
     }:
-    let
-      system = "x86_64-linux";
-      pkgs = import dev { inherit system; };
-    in
     {
-      packages.x86_64-linux = {
-        default = pkgs.hello;
-        deno = pkgs.deno;
-      };
-      devShells.x86_64-linux = {
-        default = pkgs.mkShell { nativeBuildInputs = [ pkgs.hello ]; };
-        node = pkgs.mkShell { packages = [ pkgs.nodejs ]; };
-        host = pkgs.mkShell { shellHook = "exec code"; };
-      };
       nixosConfigurations = {
         hp = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             hp/configuration.nix
             home-manager.nixosModules.home-manager
@@ -54,7 +39,7 @@
           ];
         };
         mini = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           modules = [
             mini/configuration.nix
             home-manager.nixosModules.home-manager

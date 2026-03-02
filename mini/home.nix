@@ -33,6 +33,13 @@
           productId = "00cb";
           vendorId = "045e";
         }
+        {
+          enable = true;
+          leftHanded = true;
+          name = "PixArt Dell MS116 USB Optical Mouse";
+          productId = "301a";
+          vendorId = "413c";
+        }
       ];
     };
     panels = [

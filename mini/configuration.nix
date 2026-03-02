@@ -48,7 +48,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services = {
     displayManager = {
-      autoLogin.user = "edmundo";
+      # autoLogin.user = "edmundo";
       sddm = {
         enable = true;
         wayland.enable = true;
@@ -59,7 +59,7 @@
             CursorSize = "36";
             CursorTheme = "Bibata-Modern-Ice";
           };
-          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.5";
+          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.38";
         };
       };
     };
@@ -112,6 +112,7 @@
       beamMinimal28Packages.erlang
       #
       exercism
+      audacity
     ];
   };
 

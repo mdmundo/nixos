@@ -78,10 +78,10 @@
       autoLock = false;
     };
     workspace = {
-      colorScheme = "BreezeDark";
+      colorScheme = "BreezeLight";
       cursor = {
         size = 24;
-        theme = "Bibata-Modern-Classic";
+        theme = "Bibata-Modern-Ice";
       };
       wallpaperPictureOfTheDay.provider = "bing";
       wallpaperFillMode = "preserveAspectCrop";
@@ -111,6 +111,14 @@
         family = "Cascadia Mono";
         pointSize = 10;
       };
+    };
+    powerdevil.AC = {
+      autoSuspend.action = "nothing";
+      dimDisplay.enable = true;
+      dimDisplay.idleTimeout = 30;
+      powerButtonAction = "nothing";
+      turnOffDisplay.idleTimeout = 60;
+      turnOffDisplay.idleTimeoutWhenLocked = "immediately";
     };
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;

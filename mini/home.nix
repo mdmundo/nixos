@@ -115,9 +115,9 @@
     powerdevil.AC = {
       autoSuspend.action = "nothing";
       dimDisplay.enable = true;
-      dimDisplay.idleTimeout = 30;
+      dimDisplay.idleTimeout = 20;
       powerButtonAction = "nothing";
-      turnOffDisplay.idleTimeout = 60;
+      turnOffDisplay.idleTimeout = 30;
       turnOffDisplay.idleTimeoutWhenLocked = "immediately";
     };
     configFile = {

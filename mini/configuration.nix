@@ -56,9 +56,8 @@
         theme = "where_is_my_sddm_theme";
         settings = {
           Theme = {
-            Font = "Cascadia Mono";
-            CursorSize = "36";
-            CursorTheme = "Bibata-Modern-Classic";
+            CursorSize = "64";
+            CursorTheme = "Bibata-Modern-Amber";
           };
         };
       };
@@ -114,6 +113,7 @@
       exercism
       audacity
       kdePackages.krdc
+      kdePackages.kcolorchooser
     ];
   };
 
@@ -157,6 +157,7 @@
     (pkgs.where-is-my-sddm-theme.override {
       themeConfig.General = {
         passwordInputCursorVisible = false;
+        backgroundFill = "#ff8300";
       };
     })
   ];

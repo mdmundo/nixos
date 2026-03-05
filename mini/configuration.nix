@@ -113,7 +113,7 @@
       #
       exercism
       audacity
-      remmina
+      kdePackages.krdc
     ];
   };
 

@@ -113,6 +113,7 @@
       #
       exercism
       audacity
+      remmina
     ];
   };
 

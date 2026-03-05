@@ -53,13 +53,13 @@
         enable = true;
         wayland.enable = true;
         autoNumlock = true;
+        theme = "where_is_my_sddm_theme";
         settings = {
           Theme = {
             Font = "Cascadia Mono";
             CursorSize = "36";
-            CursorTheme = "Bibata-Modern-Ice";
+            CursorTheme = "Bibata-Modern-Classic";
           };
-          General.GreeterEnvironment = "QT_SCALE_FACTOR=1.38";
         };
       };
     };
@@ -154,6 +154,11 @@
     pkgs.telegram-desktop
     # pkgs.ventoy
     pkgs.vscode
+    (pkgs.where-is-my-sddm-theme.override {
+      themeConfig.General = {
+        passwordInputCursorVisible = false;
+      };
+    })
   ];
 
   nix.settings.experimental-features = [
@@ -207,6 +212,8 @@
   programs.nh.enable = true;
 
   services.stirling-pdf.enable = true;
+
+  documentation.man.generateCaches = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

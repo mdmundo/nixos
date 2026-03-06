@@ -56,8 +56,9 @@
         theme = "where_is_my_sddm_theme";
         settings = {
           Theme = {
-            CursorSize = "64";
-            CursorTheme = "Bibata-Modern-Amber";
+            CursorSize = "96";
+            CursorTheme = "Bibata-Modern-Classic";
+
           };
         };
       };
@@ -157,7 +158,6 @@
     (pkgs.where-is-my-sddm-theme.override {
       themeConfig.General = {
         passwordInputCursorVisible = false;
-        backgroundFill = "#ff8300";
       };
     })
   ];

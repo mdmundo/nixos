@@ -56,7 +56,7 @@
         theme = "where_is_my_sddm_theme";
         settings = {
           Theme = {
-            CursorSize = "96";
+            CursorSize = "48";
             CursorTheme = "Bibata-Modern-Classic";
 
           };

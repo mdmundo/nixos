@@ -115,6 +115,9 @@
       audacity
       kdePackages.krdc
       kdePackages.kcolorchooser
+      #
+      nodejs_22
+      corepack_22
     ];
   };
 

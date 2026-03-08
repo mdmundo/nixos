@@ -88,6 +88,7 @@
         size = 24;
         theme = "Bibata-Modern-Classic";
       };
+      splashScreen.theme = "None";
       wallpaperPictureOfTheDay.provider = "bing";
       wallpaperFillMode = "preserveAspectCrop";
     };

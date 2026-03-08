@@ -53,11 +53,11 @@
         enable = true;
         wayland.enable = true;
         autoNumlock = true;
+        theme = "where_is_my_sddm_theme";
         settings = {
           Theme = {
-            Font = "Cascadia Mono";
-            CursorSize = "24";
-            CursorTheme = "Bibata-Modern-Ice";
+            CursorSize = "48";
+            CursorTheme = "Bibata-Modern-Amber";
           };
         };
       };
@@ -148,6 +148,12 @@
     # pkgs.telegram-desktop
     # pkgs.ventoy
     pkgs.vscode
+    (pkgs.where-is-my-sddm-theme.override {
+      themeConfig.General = {
+        passwordInputCursorVisible = false;
+        backgroundFill = "#ff8300";
+      };
+    })
   ];
 
   nix.settings.experimental-features = [
@@ -204,6 +210,10 @@
   programs.nh.enable = true;
 
   services.earlyoom.enable = true;
+
+  boot.plymouth.enable = true;
+
+  documentation.man.generateCaches = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

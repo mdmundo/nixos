@@ -83,6 +83,7 @@
         size = 24;
         theme = "Bibata-Modern-Ice";
       };
+      splashScreen.theme = "None";
       wallpaperPictureOfTheDay.provider = "bing";
       wallpaperFillMode = "preserveAspectCrop";
     };

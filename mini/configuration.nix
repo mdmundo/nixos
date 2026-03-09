@@ -216,6 +216,7 @@
   programs.nh.enable = true;
 
   services.stirling-pdf.enable = true;
+  boot.plymouth.enable = true;
 
   documentation.man.generateCaches = false;
 

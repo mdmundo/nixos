@@ -48,7 +48,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services = {
     displayManager = {
-      # autoLogin.user = "edmundo";
+      autoLogin.user = "edmundo";
       sddm = {
         enable = true;
         wayland.enable = true;
@@ -58,7 +58,6 @@
           Theme = {
             CursorSize = "48";
             CursorTheme = "Bibata-Modern-Classic";
-
           };
         };
       };

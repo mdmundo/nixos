@@ -75,7 +75,9 @@
     ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
-      autoLock = false;
+      lockOnStartup = true;
+      autoLock = true;
+      timeout = 2;
     };
     workspace = {
       colorScheme = "BreezeLight";

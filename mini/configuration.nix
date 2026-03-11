@@ -47,18 +47,15 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services = {
-    displayManager = {
-      autoLogin.user = "edmundo";
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        autoNumlock = true;
-        theme = "where_is_my_sddm_theme";
-        settings = {
-          Theme = {
-            CursorSize = "48";
-            CursorTheme = "Bibata-Modern-Classic";
-          };
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      autoNumlock = true;
+      theme = "where_is_my_sddm_theme";
+      settings = {
+        Theme = {
+          CursorSize = "48";
+          CursorTheme = "Bibata-Modern-Classic";
         };
       };
     };
@@ -69,10 +66,7 @@
   services.xserver.xkb.layout = "br";
 
   # Configure console keymap
-  console.keyMap = "br-abnt2";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  console.useXkbConfig = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

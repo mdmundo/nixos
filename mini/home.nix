@@ -75,7 +75,6 @@
     ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
-      lockOnStartup = true;
       autoLock = true;
       timeout = 2;
     };

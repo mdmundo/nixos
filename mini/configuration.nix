@@ -119,44 +119,51 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
-    # pkgs.audacity
-    pkgs.bibata-cursors
-    # pkgs.caligula
-    # pkgs.chromium
-    # pkgs.distrobox
-    # pkgs.eartag
-    # pkgs.firefox
-    pkgs.google-chrome
-    pkgs.haruna
-    # pkgs.helvum
-    pkgs.kdePackages.filelight
-    pkgs.kdePackages.isoimagewriter
-    pkgs.kdePackages.kcalc
-    pkgs.kdePackages.kclock
-    # pkgs.kdePackages.kdenlive
-    pkgs.kdePackages.ktorrent
-    pkgs.kdePackages.partitionmanager
-    # pkgs.lutris
-    # pkgs.mission-center
-    # pkgs.neofetch
-    # pkgs.nixfmt-rfc-style
-    # pkgs.obs-studio
-    # pkgs.pdfarranger
-    # pkgs.postman
-    pkgs.resources
-    # pkgs.sigil
-    # pkgs.stress
-    # pkgs.sublime-merge
-    pkgs.telegram-desktop
-    # pkgs.ventoy
-    pkgs.vscode
-    (pkgs.where-is-my-sddm-theme.override {
-      themeConfig.General = {
-        passwordInputCursorVisible = false;
-      };
-    })
-  ];
+  environment = {
+    plasma6.excludePackages = with pkgs.kdePackages; [
+      elisa
+      kate
+      konsole
+    ];
+    systemPackages = [
+      # pkgs.audacity
+      pkgs.bibata-cursors
+      # pkgs.caligula
+      # pkgs.chromium
+      # pkgs.distrobox
+      # pkgs.eartag
+      # pkgs.firefox
+      pkgs.google-chrome
+      pkgs.haruna
+      # pkgs.helvum
+      pkgs.kdePackages.filelight
+      pkgs.kdePackages.isoimagewriter
+      pkgs.kdePackages.kcalc
+      pkgs.kdePackages.kclock
+      # pkgs.kdePackages.kdenlive
+      pkgs.kdePackages.ktorrent
+      pkgs.kdePackages.partitionmanager
+      # pkgs.lutris
+      # pkgs.mission-center
+      # pkgs.neofetch
+      # pkgs.nixfmt-rfc-style
+      # pkgs.obs-studio
+      # pkgs.pdfarranger
+      # pkgs.postman
+      pkgs.resources
+      # pkgs.sigil
+      # pkgs.stress
+      # pkgs.sublime-merge
+      pkgs.telegram-desktop
+      # pkgs.ventoy
+      pkgs.vscode
+      (pkgs.where-is-my-sddm-theme.override {
+        themeConfig.General = {
+          passwordInputCursorVisible = false;
+        };
+      })
+    ];
+  };
 
   nix.settings.experimental-features = [
     "nix-command"

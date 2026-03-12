@@ -217,14 +217,14 @@
     };
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "edmundo" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "edmundo" ];
 
-  programs.tuxclocker.enable = true;
+  # programs.tuxclocker.enable = true;
 
   programs.nh.enable = true;
 
-  services.stirling-pdf.enable = true;
+  # services.stirling-pdf.enable = true;
 
   boot.plymouth.enable = true;
 

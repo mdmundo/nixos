@@ -194,7 +194,7 @@
 
         CPU_SCALING_MAX_FREQ_ON_AC = 2000000;
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "balance_power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
         RADEON_DPM_PERF_LEVEL_ON_AC = "low";
         RADEON_DPM_STATE_ON_AC = "battery";
       };

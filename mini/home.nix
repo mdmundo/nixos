@@ -22,10 +22,18 @@
   programs.plasma = {
     enable = true;
     # overrideConfig = true;
+    immutableByDefault = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";
       mice = [
+        {
+          enable = true;
+          leftHanded = true;
+          name = "Logitech Wireless Mouse";
+          productId = "4091";
+          vendorId = "046d";
+        }
         {
           enable = true;
           leftHanded = true;

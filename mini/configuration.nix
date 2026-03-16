@@ -91,6 +91,7 @@
   users.users.edmundo = {
     isNormalUser = true;
     description = "Edmundo";
+    hashedPassword = "$y$j9T$N0eeibSIIRmukEXObAHPX.$5iU2RlU/n7xTkJ1saPFdzyCTyjyak4k6ZaVp4Obkmh0";
     extraGroups = [
       "networkmanager"
       "wheel"

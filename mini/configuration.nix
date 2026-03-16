@@ -88,31 +88,43 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.edmundo = {
-    isNormalUser = true;
-    description = "Edmundo";
-    hashedPassword = "$y$j9T$N0eeibSIIRmukEXObAHPX.$5iU2RlU/n7xTkJ1saPFdzyCTyjyak4k6ZaVp4Obkmh0";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      nixfmt
-      #
-      bun
-      #
-      gleam
-      beamMinimal28Packages.rebar3
-      beamMinimal28Packages.erlang
-      #
-      exercism
-      audacity
-      kdePackages.krdc
-      kdePackages.kcolorchooser
-      #
-      nodejs_22
-      corepack_22
-    ];
+  users = {
+    mutableUsers = false;
+    users.edmundo = {
+      description = "Edmundo";
+      hashedPassword = "$y$j9T$F7A5s/xuvcYljRNXNBmLh0$fMH9We0S7x8P1NtPO5cR9EqvuXsOw97JTh1mvor603A";
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      packages = with pkgs; [
+        # bun
+        # gleam
+        # beamMinimal28Packages.rebar3
+        # beamMinimal28Packages.erlang
+        # exercism
+        kdePackages.filelight
+        kdePackages.kcalc
+        kdePackages.kclock
+        kdePackages.kcolorchooser
+        kdePackages.krdc
+        # kdePackages.isoimagewriter
+        # kdePackages.kdenlive
+        # kdePackages.ktorrent
+        # kdePackages.partitionmanager
+        # ---
+        audacity
+        corepack_22
+        google-chrome
+        haruna
+        nixfmt
+        nodejs_22
+        resources
+        telegram-desktop
+        vscode
+      ];
+    };
   };
 
   # Allow unfree packages
@@ -127,37 +139,22 @@
       konsole
     ];
     systemPackages = [
-      # pkgs.audacity
-      pkgs.bibata-cursors
       # pkgs.caligula
       # pkgs.chromium
       # pkgs.distrobox
       # pkgs.eartag
       # pkgs.firefox
-      pkgs.google-chrome
-      pkgs.haruna
       # pkgs.helvum
-      pkgs.kdePackages.filelight
-      pkgs.kdePackages.isoimagewriter
-      pkgs.kdePackages.kcalc
-      pkgs.kdePackages.kclock
-      # pkgs.kdePackages.kdenlive
-      pkgs.kdePackages.ktorrent
-      pkgs.kdePackages.partitionmanager
       # pkgs.lutris
       # pkgs.mission-center
-      # pkgs.neofetch
-      # pkgs.nixfmt-rfc-style
       # pkgs.obs-studio
       # pkgs.pdfarranger
       # pkgs.postman
-      pkgs.resources
       # pkgs.sigil
       # pkgs.stress
       # pkgs.sublime-merge
-      pkgs.telegram-desktop
       # pkgs.ventoy
-      pkgs.vscode
+      pkgs.bibata-cursors
       (pkgs.where-is-my-sddm-theme.override {
         themeConfig.General = {
           passwordInputCursorVisible = false;

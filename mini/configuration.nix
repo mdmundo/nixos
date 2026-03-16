@@ -92,7 +92,7 @@
     mutableUsers = false;
     users.edmundo = {
       description = "Edmundo";
-      hashedPassword = "$y$j9T$F7A5s/xuvcYljRNXNBmLh0$fMH9We0S7x8P1NtPO5cR9EqvuXsOw97JTh1mvor603A";
+      hashedPassword = "$y$j9T$C4dVUliDrjQw.YDbniT3t1$WRBlrzT2EkWR2YAUeRgSZygfharmCJ8Z78u93.iBKqC";
       isNormalUser = true;
       extraGroups = [
         "networkmanager"

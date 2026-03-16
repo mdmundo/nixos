@@ -99,11 +99,6 @@
         "wheel"
       ];
       packages = with pkgs; [
-        # bun
-        # gleam
-        # beamMinimal28Packages.rebar3
-        # beamMinimal28Packages.erlang
-        # exercism
         kdePackages.filelight
         kdePackages.kcalc
         kdePackages.kclock
@@ -113,7 +108,6 @@
         # kdePackages.kdenlive
         # kdePackages.ktorrent
         # kdePackages.partitionmanager
-        # ---
         audacity
         corepack_22
         google-chrome

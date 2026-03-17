@@ -127,8 +127,7 @@
       dimDisplay.enable = true;
       dimDisplay.idleTimeout = 20;
       powerButtonAction = "nothing";
-      turnOffDisplay.idleTimeout = 30;
-      turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+      turnOffDisplay.idleTimeout = "never";
     };
     configFile = {
       "klipperrc"."General"."IgnoreImages" = false;

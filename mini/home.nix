@@ -22,7 +22,7 @@
   programs.plasma = {
     enable = true;
     # overrideConfig = true;
-    immutableByDefault = true;
+    # immutableByDefault = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";

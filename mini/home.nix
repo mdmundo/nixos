@@ -91,6 +91,7 @@
       cursor = {
         size = 24;
         theme = "Bibata-Modern-Ice";
+        cursorFeedback = "None";
       };
       splashScreen.theme = "None";
       wallpaperPictureOfTheDay.provider = "bing";

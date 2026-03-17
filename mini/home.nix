@@ -169,6 +169,8 @@
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
+      "services/code.desktop"._launch = "Launch Mail";
+      "services/google-chrome.desktop"._launch = "Home Page";
     };
     spectacle.shortcuts.captureRectangularRegion = "Meta+S";
   };

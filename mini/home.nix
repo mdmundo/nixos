@@ -68,11 +68,7 @@
             iconTasks = {
               behavior.grouping.method = "none";
               settings.General.wheelEnabled = "AllTask";
-              launchers = [
-                "applications:org.kde.dolphin.desktop"
-                "applications:code.desktop"
-                "applications:google-chrome.desktop"
-              ];
+              launchers = [ ];
             };
           }
           "org.kde.plasma.marginsseparator"

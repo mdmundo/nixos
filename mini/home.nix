@@ -73,11 +73,12 @@
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.keyboardindicator"
-          "org.kde.plasma.devicenotifier"
           "org.kde.plasma.battery"
+          "org.kde.plasma.devicenotifier"
+          "org.kde.plasma.clipboard"
           "org.kde.plasma.volume"
-          "org.kde.plasma.bluetooth"
           "org.kde.plasma.brightness"
+          "org.kde.plasma.bluetooth"
           "org.kde.plasma.networkmanagement"
           "org.kde.plasma.digitalclock"
         ];

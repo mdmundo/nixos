@@ -72,7 +72,13 @@
             };
           }
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.systemtray"
+          "org.kde.plasma.keyboardindicator"
+          "org.kde.plasma.devicenotifier"
+          "org.kde.plasma.battery"
+          "org.kde.plasma.volume"
+          "org.kde.plasma.bluetooth"
+          "org.kde.plasma.brightness"
+          "org.kde.plasma.networkmanagement"
           "org.kde.plasma.digitalclock"
         ];
       }
@@ -171,6 +177,8 @@
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
       "services/code.desktop"._launch = "Launch Mail";
       "services/google-chrome.desktop"._launch = "Home Page";
+      "services/net.nokyan.Resources.desktop"._launch = "Search";
+      "services/org.telegram.desktop.desktop"._launch = "Tools";
     };
     spectacle.shortcuts.captureRectangularRegion = "Meta+S";
   };

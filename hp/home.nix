@@ -183,7 +183,6 @@
         "Meta+Up"
         "Volume Up"
       ];
-      "ksmserver"."Log Out" = "Meta+Z";
       "kwin"."Kill Window" = "Meta+X";
       "kwin"."Window Close" = [
         "Meta+Q"

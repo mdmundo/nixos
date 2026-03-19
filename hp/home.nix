@@ -162,19 +162,20 @@
       };
     };
     configFile = {
-      "klipperrc"."General"."IgnoreImages" = false;
-      "klipperrc"."General"."MaxClipItems" = 256;
-      "ksmserverrc"."General"."loginMode" = "emptySession";
-      "kwinrc"."Effect-overview"."BorderActivate" = 9;
-      "kwinrc"."Plugins"."shakecursorEnabled" = false;
-      "kwinrc"."TabBox"."LayoutName" = "compact";
-      "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
-      "kwinrc"."Xwayland"."Scale" = 1.25;
-      "plasmanotifyrc"."Notifications"."PopupPosition" = "BottomRight";
-      "plasmaparc"."General"."AudioFeedback" = false;
-      "spectaclerc"."General"."autoSaveImage" = true;
-      "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
-      "spectaclerc"."General"."useReleaseToCapture" = true;
+      klipperrc.General.IgnoreImages = false;
+      klipperrc.General.MaxClipItems = 256;
+      ksmserverrc.General.loginMode = "emptySession";
+      kwinrc.Effect-overview.BorderActivate = 9;
+      kwinrc.Plugins.logoutEnabled = false;
+      kwinrc.Plugins.shakecursorEnabled = false;
+      kwinrc.TabBox.LayoutName = "compact";
+      kwinrc.TabBox.OrderMinimizedMode = 1;
+      kwinrc.Xwayland.Scale = 1.25;
+      plasmanotifyrc.Notifications.PopupPosition = "BottomRight";
+      plasmaparc.General.AudioFeedback = false;
+      spectaclerc.General.autoSaveImage = true;
+      spectaclerc.General.clipboardGroup = "PostScreenshotCopyImage";
+      spectaclerc.General.useReleaseToCapture = true;
     };
     shortcuts = {
       "kmix"."decrease_volume" = [
@@ -185,6 +186,7 @@
         "Meta+Up"
         "Volume Up"
       ];
+      "ksmserver"."Log Out" = "Meta+Z";
       "kwin"."Kill Window" = "Meta+X";
       "kwin"."Window Close" = [
         "Meta+Q"
@@ -214,7 +216,7 @@
       ];
       "services/net.nokyan.Resources.desktop"._launch = [
         "Search"
-        "Meta+Z"
+        "Meta+Esc"
       ];
     };
     spectacle.shortcuts.captureRectangularRegion = "Meta+S";

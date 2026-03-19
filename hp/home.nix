@@ -21,7 +21,7 @@
 
   programs.plasma = {
     enable = true;
-    # overrideConfig = true;
+    overrideConfig = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";
@@ -65,28 +65,33 @@
             iconTasks = {
               behavior.grouping.method = "none";
               settings.General.wheelEnabled = "AllTask";
-              launchers = [
-                "applications:org.kde.dolphin.desktop"
-                "applications:code.desktop"
-                "applications:google-chrome.desktop"
-              ];
+              launchers = [ ];
             };
           }
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.systemtray"
+          "org.kde.plasma.notifications"
+          "org.kde.plasma.battery"
+          "org.kde.plasma.devicenotifier"
+          "org.kde.plasma.clipboard"
+          "org.kde.plasma.volume"
+          "org.kde.plasma.brightness"
+          "org.kde.plasma.bluetooth"
+          "org.kde.plasma.networkmanagement"
           "org.kde.plasma.digitalclock"
         ];
       }
     ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
-      autoLock = false;
+      autoLock = true;
+      timeout = 2;
     };
     workspace = {
       colorScheme = "BreezeDark";
       cursor = {
         size = 24;
         theme = "Bibata-Modern-Classic";
+        cursorFeedback = "None";
       };
       splashScreen.theme = "None";
       wallpaperPictureOfTheDay.provider = "bing";
@@ -116,6 +121,39 @@
       windowTitle = {
         family = "Cascadia Mono";
         pointSize = 10;
+      };
+    };
+    powerdevil = {
+      AC = {
+        autoSuspend.action = "nothing";
+        dimDisplay.enable = true;
+        dimDisplay.idleTimeout = 20;
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "nothing";
+        turnOffDisplay.idleTimeout = 30;
+        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        whenLaptopLidClosed = "sleep";
+      };
+      battery = {
+        autoSuspend.action = "nothing";
+        dimDisplay.enable = true;
+        dimDisplay.idleTimeout = 20;
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "nothing";
+        turnOffDisplay.idleTimeout = 30;
+        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        whenLaptopLidClosed = "sleep";
+      };
+      lowBattery = {
+        autoSuspend.action = "shutDown";
+        autoSuspend.idleTimeout = 60;
+        dimDisplay.enable = true;
+        dimDisplay.idleTimeout = 20;
+        inhibitLidActionWhenExternalMonitorConnected = true;
+        powerButtonAction = "nothing";
+        turnOffDisplay.idleTimeout = 30;
+        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        whenLaptopLidClosed = "shutDown";
       };
     };
     configFile = {
@@ -161,6 +199,18 @@
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
+      "services/code.desktop"._launch = [
+        "Launch Mail"
+        "Meta+A"
+      ];
+      "services/google-chrome.desktop"._launch = [
+        "Home Page"
+        "Meta+W"
+      ];
+      "services/net.nokyan.Resources.desktop"._launch = [
+        "Search"
+        "Meta+Z"
+      ];
     };
     spectacle.shortcuts.captureRectangularRegion = "Meta+S";
   };

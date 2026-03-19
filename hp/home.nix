@@ -21,7 +21,7 @@
 
   programs.plasma = {
     enable = true;
-    overrideConfig = true;
+    # overrideConfig = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
       keyboard.numlockOnStartup = "on";

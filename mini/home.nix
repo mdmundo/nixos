@@ -73,6 +73,7 @@
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.keyboardindicator"
+          "org.kde.plasma.notifications"
           "org.kde.plasma.battery"
           "org.kde.plasma.devicenotifier"
           "org.kde.plasma.clipboard"
@@ -176,10 +177,22 @@
       ];
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
-      "services/code.desktop"._launch = "Launch Mail";
-      "services/google-chrome.desktop"._launch = "Home Page";
-      "services/net.nokyan.Resources.desktop"._launch = "Search";
-      "services/org.telegram.desktop.desktop"._launch = "Tools";
+      "services/code.desktop"._launch = [
+        "Launch Mail"
+        "Meta+A"
+      ];
+      "services/google-chrome.desktop"._launch = [
+        "Home Page"
+        "Meta+W"
+      ];
+      "services/net.nokyan.Resources.desktop"._launch = [
+        "Search"
+        "Meta+Z"
+      ];
+      "services/org.telegram.desktop.desktop"._launch = [
+        "Tools"
+        "Meta+T"
+      ];
     };
     spectacle.shortcuts.captureRectangularRegion = "Meta+S";
   };

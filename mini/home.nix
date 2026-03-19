@@ -21,7 +21,7 @@
 
   programs.plasma = {
     enable = true;
-    # overrideConfig = true;
+    overrideConfig = true;
     # immutableByDefault = true;
     session.general.askForConfirmationOnLogout = false;
     input = {
@@ -81,7 +81,12 @@
           "org.kde.plasma.brightness"
           "org.kde.plasma.bluetooth"
           "org.kde.plasma.networkmanagement"
-          "org.kde.plasma.digitalclock"
+          {
+            digitalClock = {
+              date.format.custom = "ddd, yyyy-MM-dd";
+              time.showSeconds = "always";
+            };
+          }
         ];
       }
     ];

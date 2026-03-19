@@ -79,7 +79,7 @@
           "org.kde.plasma.networkmanagement"
           {
             digitalClock = {
-              date.format.custom = "dddd, yyyy-MM-dd";
+              date.format.custom = "ddd, yyyy-MM-dd";
               time.showSeconds = "always";
             };
           }

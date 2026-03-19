@@ -135,8 +135,7 @@
         dimDisplay.idleTimeout = 20;
         inhibitLidActionWhenExternalMonitorConnected = true;
         powerButtonAction = "nothing";
-        turnOffDisplay.idleTimeout = 30;
-        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        turnOffDisplay.idleTimeout = "never";
         whenLaptopLidClosed = "sleep";
       };
       battery = {
@@ -145,8 +144,7 @@
         dimDisplay.idleTimeout = 20;
         inhibitLidActionWhenExternalMonitorConnected = true;
         powerButtonAction = "nothing";
-        turnOffDisplay.idleTimeout = 30;
-        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        turnOffDisplay.idleTimeout = "never";
         whenLaptopLidClosed = "sleep";
       };
       lowBattery = {
@@ -156,8 +154,7 @@
         dimDisplay.idleTimeout = 20;
         inhibitLidActionWhenExternalMonitorConnected = true;
         powerButtonAction = "nothing";
-        turnOffDisplay.idleTimeout = 30;
-        turnOffDisplay.idleTimeoutWhenLocked = "immediately";
+        turnOffDisplay.idleTimeout = "never";
         whenLaptopLidClosed = "shutDown";
       };
     };

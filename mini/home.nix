@@ -83,7 +83,7 @@
           "org.kde.plasma.networkmanagement"
           {
             digitalClock = {
-              date.format.custom = "ddd, yyyy-MM-dd";
+              date.format.custom = "ddd yyyy-MM-dd";
               time.showSeconds = "always";
             };
           }
@@ -140,19 +140,20 @@
       turnOffDisplay.idleTimeout = "never";
     };
     configFile = {
-      "klipperrc"."General"."IgnoreImages" = false;
-      "klipperrc"."General"."MaxClipItems" = 256;
-      "ksmserverrc"."General"."loginMode" = "emptySession";
-      "kwinrc"."Effect-overview"."BorderActivate" = 9;
-      "kwinrc"."Plugins"."shakecursorEnabled" = false;
-      "kwinrc"."TabBox"."LayoutName" = "compact";
-      "kwinrc"."TabBox"."OrderMinimizedMode" = 1;
-      "kwinrc"."Xwayland"."Scale" = 1.25;
-      "plasmanotifyrc"."Notifications"."PopupPosition" = "BottomRight";
-      "plasmaparc"."General"."AudioFeedback" = false;
-      "spectaclerc"."General"."autoSaveImage" = true;
-      "spectaclerc"."General"."clipboardGroup" = "PostScreenshotCopyImage";
-      "spectaclerc"."General"."useReleaseToCapture" = true;
+      klipperrc.General.IgnoreImages = false;
+      klipperrc.General.MaxClipItems = 256;
+      ksmserverrc.General.loginMode = "emptySession";
+      kwinrc.Effect-overview.BorderActivate = 9;
+      kwinrc.Plugins.logoutEnabled = false;
+      kwinrc.Plugins.shakecursorEnabled = false;
+      kwinrc.TabBox.LayoutName = "compact";
+      kwinrc.TabBox.OrderMinimizedMode = 1;
+      kwinrc.Xwayland.Scale = 1.25;
+      plasmanotifyrc.Notifications.PopupPosition = "BottomRight";
+      plasmaparc.General.AudioFeedback = false;
+      spectaclerc.General.autoSaveImage = true;
+      spectaclerc.General.clipboardGroup = "PostScreenshotCopyImage";
+      spectaclerc.General.useReleaseToCapture = true;
     };
     shortcuts = {
       "kmix"."decrease_volume" = [
@@ -183,7 +184,6 @@
       "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
       "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
       "services/code.desktop"._launch = [
-        "Launch Mail"
         "Meta+A"
       ];
       "services/google-chrome.desktop"._launch = [
@@ -191,11 +191,9 @@
         "Meta+W"
       ];
       "services/net.nokyan.Resources.desktop"._launch = [
-        "Search"
-        "Meta+Z"
+        "Meta+Esc"
       ];
       "services/org.telegram.desktop.desktop"._launch = [
-        "Tools"
         "Meta+T"
       ];
     };

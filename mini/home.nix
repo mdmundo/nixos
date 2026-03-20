@@ -52,6 +52,10 @@
     };
     panels = [
       {
+        location = "top";
+        lengthMode = "fill";
+        opacity = "opaque";
+        height = 44;
         widgets = [
           {
             kickoff = {
@@ -72,7 +76,6 @@
             };
           }
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.keyboardindicator"
           "org.kde.plasma.notifications"
           "org.kde.plasma.battery"
           "org.kde.plasma.devicenotifier"
@@ -81,14 +84,26 @@
           "org.kde.plasma.brightness"
           "org.kde.plasma.bluetooth"
           "org.kde.plasma.networkmanagement"
-          {
-            digitalClock = {
-              date.format.custom = "ddd yyyy-MM-dd";
-              time.showSeconds = "always";
-            };
-          }
         ];
       }
+      # {
+      #   location = "bottom";
+      #   alignment = "right";
+      #   lengthMode = "fit";
+      #   hiding = "windowsgobelow";
+      #   opacity = "translucent";
+      #   height = 36;
+      #   widgets = [
+      #     "org.kde.plasma.notifications"
+      #     "org.kde.plasma.battery"
+      #     "org.kde.plasma.devicenotifier"
+      #     "org.kde.plasma.clipboard"
+      #     "org.kde.plasma.volume"
+      #     "org.kde.plasma.brightness"
+      #     "org.kde.plasma.bluetooth"
+      #     "org.kde.plasma.networkmanagement"
+      #   ];
+      # }
     ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";
@@ -149,7 +164,8 @@
       kwinrc.TabBox.LayoutName = "compact";
       kwinrc.TabBox.OrderMinimizedMode = 1;
       kwinrc.Xwayland.Scale = 1.25;
-      plasmanotifyrc.Notifications.PopupPosition = "BottomRight";
+      plasmanotifyrc.Notifications.PopupPosition = "TopRight";
+      plasmanotifyrc.Notifications.PopupTimeout = 1000;
       plasmaparc.General.AudioFeedback = false;
       spectaclerc.General.autoSaveImage = true;
       spectaclerc.General.clipboardGroup = "PostScreenshotCopyImage";

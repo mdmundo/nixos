@@ -108,7 +108,6 @@
         # kdePackages.isoimagewriter
         # kdePackages.kdenlive
         # kdePackages.ktorrent
-        # kdePackages.partitionmanager
         audacity
         corepack_22
         google-chrome
@@ -149,6 +148,7 @@
       # pkgs.stress
       # pkgs.sublime-merge
       # pkgs.ventoy
+      pkgs.kdePackages.partitionmanager
       pkgs.bibata-cursors
       (pkgs.where-is-my-sddm-theme.override {
         themeConfig.General = {

@@ -86,24 +86,6 @@
           "org.kde.plasma.networkmanagement"
         ];
       }
-      # {
-      #   location = "bottom";
-      #   alignment = "right";
-      #   lengthMode = "fit";
-      #   hiding = "windowsgobelow";
-      #   opacity = "translucent";
-      #   height = 36;
-      #   widgets = [
-      #     "org.kde.plasma.notifications"
-      #     "org.kde.plasma.battery"
-      #     "org.kde.plasma.devicenotifier"
-      #     "org.kde.plasma.clipboard"
-      #     "org.kde.plasma.volume"
-      #     "org.kde.plasma.brightness"
-      #     "org.kde.plasma.bluetooth"
-      #     "org.kde.plasma.networkmanagement"
-      #   ];
-      # }
     ];
     kscreenlocker = {
       appearance.wallpaperPictureOfTheDay.provider = "bing";

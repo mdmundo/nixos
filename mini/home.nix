@@ -76,9 +76,7 @@
             };
           }
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.notifications"
           "org.kde.plasma.battery"
-          "org.kde.plasma.devicenotifier"
           "org.kde.plasma.clipboard"
           "org.kde.plasma.volume"
           "org.kde.plasma.brightness"

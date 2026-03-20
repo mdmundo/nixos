@@ -25,7 +25,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Argentina/Buenos_Aires";
+  time.timeZone = "America/Araguaina";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -103,6 +103,7 @@
         kdePackages.kcalc
         kdePackages.kclock
         kdePackages.kcolorchooser
+        kdePackages.kfind
         kdePackages.krdc
         # kdePackages.isoimagewriter
         # kdePackages.kdenlive

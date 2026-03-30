@@ -82,6 +82,7 @@
               showSeconds = "always";
             };
           }
+          "org.kde.plasma.clipboard"
           "org.kde.plasma.volume"
           "org.kde.plasma.brightness"
           "org.kde.plasma.bluetooth"

@@ -69,20 +69,18 @@
             };
           }
           "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.notifications"
-          "org.kde.plasma.battery"
-          "org.kde.plasma.devicenotifier"
-          "org.kde.plasma.clipboard"
-          "org.kde.plasma.volume"
-          "org.kde.plasma.brightness"
-          "org.kde.plasma.bluetooth"
-          "org.kde.plasma.networkmanagement"
           {
             digitalClock = {
               date.format.custom = "ddd yyyy-MM-dd";
               time.showSeconds = "always";
             };
           }
+          "org.kde.plasma.battery"
+          "org.kde.plasma.clipboard"
+          "org.kde.plasma.volume"
+          "org.kde.plasma.brightness"
+          "org.kde.plasma.bluetooth"
+          "org.kde.plasma.networkmanagement"
         ];
       }
     ];

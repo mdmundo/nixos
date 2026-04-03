@@ -52,7 +52,7 @@
         widgets = [
           {
             kickoff = {
-              icon = "nix-snowflake";
+              icon = "nix-snowflake-white";
               sortAlphabetically = true;
               sidebarPosition = "right";
               favoritesDisplayMode = "list";

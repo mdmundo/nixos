@@ -106,6 +106,9 @@
         nixfmt
         resources
         vscode
+
+        corepack_22
+        nodejs_22
       ];
     };
   };

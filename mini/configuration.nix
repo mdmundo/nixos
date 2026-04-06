@@ -216,6 +216,8 @@
 
   boot.plymouth.enable = true;
 
+  virtualisation.waydroid.enable = true;
+
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "edmundo" ];
 

@@ -29,7 +29,7 @@
       mice = [
         {
           enable = true;
-          leftHanded = true;
+          leftHanded = false;
           name = "Logitech Wireless Mouse";
           productId = "4091";
           vendorId = "046d";
@@ -155,6 +155,7 @@
       spectaclerc.General.autoSaveImage = true;
       spectaclerc.General.clipboardGroup = "PostScreenshotCopyImage";
       spectaclerc.General.useReleaseToCapture = true;
+      spectaclerc.VideoSave.preferredVideoFormat = 2;
     };
     shortcuts = {
       "kmix"."decrease_volume" = [
@@ -198,6 +199,9 @@
         "Meta+T"
       ];
     };
-    spectacle.shortcuts.captureRectangularRegion = "Meta+S";
+    spectacle.shortcuts = {
+      captureRectangularRegion = "Meta+S";
+      recordRegion = "Meta+R";
+    };
   };
 }

@@ -91,9 +91,8 @@
       }
     ];
     kscreenlocker = {
-      appearance.wallpaperPictureOfTheDay.provider = "bing";
-      autoLock = true;
-      timeout = 2;
+      appearance.wallpaperPictureOfTheDay.provider = "flickr";
+      autoLock = false;
     };
     workspace = {
       colorScheme = "BreezeLight";
@@ -134,8 +133,7 @@
     };
     powerdevil.AC = {
       autoSuspend.action = "nothing";
-      dimDisplay.enable = true;
-      dimDisplay.idleTimeout = 20;
+      dimDisplay.enable = false;
       powerButtonAction = "nothing";
       turnOffDisplay.idleTimeout = "never";
     };

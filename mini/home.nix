@@ -156,46 +156,43 @@
       spectaclerc.VideoSave.preferredVideoFormat = 2;
     };
     shortcuts = {
-      "kmix"."decrease_volume" = [
-        "Meta+Down"
-        "Volume Down"
-      ];
-      "kmix"."increase_volume" = [
-        "Meta+Up"
-        "Volume Up"
-      ];
-      "kwin"."Kill Window" = "Meta+X";
-      "kwin"."Window Close" = [
-        "Meta+Q"
-        "Alt+F4"
-      ];
-      "mediacontrol"."nextmedia" = [
-        "Meta+Shift+Right"
-        "Media Next"
-      ];
-      "mediacontrol"."playpausemedia" = [
-        "Meta+Shift+Down"
-        "Media Play"
-      ];
-      "mediacontrol"."previousmedia" = [
-        "Meta+Shift+Left"
-        "Media Previous"
-      ];
-      "org_kde_powerdevil"."Decrease Screen Brightness" = "Meta+Left";
-      "org_kde_powerdevil"."Increase Screen Brightness" = "Meta+Right";
-      "services/code.desktop"._launch = [
-        "Meta+A"
-      ];
-      "services/google-chrome.desktop"._launch = [
-        "Home Page"
-        "Meta+W"
-      ];
-      "services/net.nokyan.Resources.desktop"._launch = [
-        "Meta+Esc"
-      ];
-      "services/org.telegram.desktop.desktop"._launch = [
-        "Meta+T"
-      ];
+      kmix = {
+        decrease_volume = [
+          "Meta+Down"
+          "Volume Down"
+        ];
+        increase_volume = [
+          "Meta+Up"
+          "Volume Up"
+        ];
+      };
+      kwin = {
+        "Kill Window" = "Meta+X";
+        "Window Close" = "Meta+Q";
+      };
+      mediacontrol = {
+        nextmedia = [
+          "Meta+Shift+Right"
+          "Media Next"
+        ];
+        playpausemedia = [
+          "Meta+Shift+Down"
+          "Media Play"
+        ];
+        previousmedia = [
+          "Meta+Shift+Left"
+          "Media Previous"
+        ];
+      };
+      org_kde_powerdevil = {
+        "Decrease Screen Brightness" = "Meta+Left";
+        "Increase Screen Brightness" = "Meta+Right";
+        Sleep = "Meta+Z";
+      };
+      "services/code.desktop"._launch = "Meta+C";
+      "services/google-chrome.desktop"._launch = "Meta+W";
+      "services/net.nokyan.Resources.desktop"._launch = "Meta+Esc";
+      "services/org.telegram.desktop.desktop"._launch = "Meta+T";
     };
     spectacle.shortcuts = {
       captureRectangularRegion = "Meta+S";

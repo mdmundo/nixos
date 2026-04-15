@@ -91,7 +91,7 @@
       }
     ];
     kscreenlocker = {
-      appearance.wallpaperPictureOfTheDay.provider = "flickr";
+      appearance.wallpaperPictureOfTheDay.provider = "bing";
       autoLock = false;
     };
     workspace = {
@@ -102,7 +102,7 @@
         cursorFeedback = "None";
       };
       splashScreen.theme = "None";
-      wallpaperPictureOfTheDay.provider = "bing";
+      wallpaperPictureOfTheDay.provider = "simonstalenhag";
       wallpaperFillMode = "preserveAspectCrop";
     };
     fonts = {
